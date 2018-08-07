@@ -232,7 +232,10 @@
                                                          </b></button>
                                                        </div>
                                                        </td>
-                  <td class="align-middle"><i>Ignore l'armure</i>
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                  							             <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Ignore l'armure</button>
+                  							       
+                                           </div>
                                            <div class="btn-group btn-group-sm" role="group" aria-label="">
                   							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>2 EC</button>
                   							             <button type="button" class="btn btn-danger btn-sm" disabled>Brise armure  <span class="badge badge-light badge-pill text-danger">2</span></button>
@@ -246,9 +249,9 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Tapi dans l'ombre <!-- NOM -->
+                  <td class="align-middle">Tapie dans l'ombre <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center">
                                                        </td>
@@ -319,22 +322,59 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Panser les plaies <!-- NOM -->
+                  <td class="align-middle">Coup bas <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"><div class="font-weight-bold text-center text-danger"> <!-- DMG -->
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
+                                                         </b></button>
                                                        </div></td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							             <button type="button" class="btn btn-outline-success btn-sm" disabled>1 AC</button>
-                  							             <button type="button" class="btn btn-success btn-sm" disabled>Restauration  <span class="badge badge-light badge-pill text-success">5</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                          </td>
+                  <td class="align-middle">
+				  <div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-outline-warning btn-sm" disabled>Crit</button>
+                                             <button type="button" class="CritValue btn btn-warning btn-sm text-light" onclick="Crit(this)"><b>20</b></button>
+                                           </div>
+											<div class="btn-group btn-group-sm" role="group" aria-label="">
+                  							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
+                  							             <button type="button" class="btn btn-success btn-sm" disabled>Dephasage  <span class="badge badge-light badge-pill text-success">2</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                         </div> </td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">8</b>
                                                        </button></td>                        
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
+				
+				<!-- LIGNE -->
+           <tr class="table-crit table-warning" style="display: none;"> 
+                  <td class="text-center align-middle"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                                          </button></td>
+                  <td class="align-middle">Coup bas critique <!-- NOM -->
+                                          </td>
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-primary btn-sm dmg-crit" disabled><b class="dmg-crit-min">7</b><b> - </b><b class="dmg-crit-max">10</b> <!-- DMG -->
+                                                         </b></button></div>
+                                                     </td>
+                                                <div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
+															<div>
+                  							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
+                  							             <button type="button" class="btn btn-success btn-sm" disabled>Dephasage  <span class="badge badge-light badge-pill text-success">3</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+														</div>
+                                  
+										  
+                                           </td>
+                  <td class="align-middle text-center"> </td>                         
+                  <td class="text-center"><!-- ATQ BUTTON & UP/DOWN BUTTON -->
+                                          </td>
+                </tr>
+				
+				
+				
                 <!-- LIGNE -->
                 <tr class="table-secondary">
                   <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
@@ -684,6 +724,7 @@
                       <option>Épine</option> 
                       <option>Esquive</option> 
                       <option>Furtivité</option> 
+					  <option>Déphasage</option> 
                       <option>Immunité</option> 
                       <option>Infusion</option> 
                       <option>Protection</option> 
