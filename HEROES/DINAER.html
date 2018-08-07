@@ -90,7 +90,7 @@
                 <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="PWR" type="button" class="btn btn-outline-info" onclick="ShowModalChange('PWR', 'setPWR', 'modalPWR')">150 <!-- PWR --></button>
                   <button id= "PWR-MAX" type="button" class="btn btn-info" style="font-weight:900" disabled> 150
-                    <i class="fas fa-bolt"></i></button>
+                    <i class="fas fa-flask"></i></button>
                 </div>
 
                 <div class="btn-group btn-up" role="group" aria-label="">
@@ -163,8 +163,7 @@
                   <td class="align-middle"></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>+ </b><b class="pluspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
-                      					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
                                           </td>
                 </tr>
 				
@@ -202,13 +201,13 @@
                                           </button></td>
                   <td class="align-middle">Ricochet <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
-													   <div class="btn-group btn-group-sm" role="group" aria-label="">
+													                             <div class="btn-group btn-group-sm" role="group" aria-label="">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 2" disabled>1 EA <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">3</b> <!-- DMG -->
@@ -233,7 +232,7 @@
                                           </button></td>
                   <td class="align-middle">Ricochet critique <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg-crit" disabled><b class="dmg-crit-min">5</b><b> - </b><b class="dmg-crit-max">8</b> <!-- DMG -->
@@ -403,9 +402,10 @@
                                                        </button></td>
                   <td class="align-middle">Cape de récupération <!-- NOM -->
                                           </td>
-                  <td class="align-middle"> A chaque fin de tour : <div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							             <button type="button" class="btn btn-info btn-sm" disabled>Mana  <span class="badge badge-light badge-pill text-info">5 - 20</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                          </td> <!-- DESCRIPTION -->
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                             <button type="button" class="btn btn-outline-info btn-sm" disabled>Fin de tour</button>
+                                             <button type="button" class="btn btn-info btn-sm" disabled>Mana  <span class="badge badge-light badge-pill text-info">5 - 20</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                          </div>
                                           </td>
                   <td class="text-center"><button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->
                                           </td>
