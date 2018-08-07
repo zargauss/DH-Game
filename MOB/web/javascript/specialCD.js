@@ -196,11 +196,11 @@ $('#Debuff_list:last')
         .attr('class', 'btn-plus btn btn-danger btn-list')
         .html('<i class="fas fa-plus"></i>')));
 
-$('.btn-close').click(function () {
+$('#Debuff_list .btn-close:last').click(function () {
    RemoveBuff(this);
 });
 
-$('.btn-plus').click(function () {
+$('#Debuff_list .btn-plus:last').click(function () {
      PlusBuff(this);
 });
 
@@ -239,11 +239,11 @@ $('#Buff_list:last')
         .attr('class', 'btn-close btn btn-success btn-list')
         .html('<i class="fas fa-times"></i>')));
 
-$('.btn-close').click(function () {
+$('#Buff_list .btn-close:last').click(function () {
    RemoveBuff(this);
 });
 
-$('.btn-plus').click(function () {
+$('#Buff_list .btn-plus:last').click(function () {
      PlusBuff(this);
 });
 
@@ -267,10 +267,10 @@ $(elem.parentNode).find('.btn-B').children().text(tour + 1);
 // LOCK / UNLOCK
 function lock() {
   $('#CompTab').find('.Up').each(function(i, obj) {
-  	$(obj).attr('disabled', true);
+    $(obj).attr('disabled', true);
   });
   $('#CompTab').find('.Down').each(function(i, obj) {
-  	$(obj).attr('disabled', true);
+    $(obj).attr('disabled', true);
   });
 
   $('.lock').html("");
@@ -281,10 +281,10 @@ function lock() {
 
 function unlock() {
   $('#CompTab').find('.Up').each(function(i, obj) {
-  	$(obj).attr('disabled', false);
+    $(obj).attr('disabled', false);
   });
   $('#CompTab').find('.Down').each(function(i, obj) {
-  	$(obj).attr('disabled', false);
+    $(obj).attr('disabled', false);
   });
 
   $('.lock').html("");
@@ -406,13 +406,13 @@ if($(elem.parentNode.parentNode).attr('class') == "table-actif") {
 //////////////////////////
 // CRIT
 function Crit(elem){
-	if($(elem.parentNode.parentNode.parentNode).next().attr('class') == "table-crit table-warning") {
-	  if($(elem.parentNode.parentNode.parentNode).next().attr('style') == null){
-	    $(elem.parentNode.parentNode.parentNode).next().attr('style', 'display: none;');
-	  } else {
-	    $(elem.parentNode.parentNode.parentNode).next().attr('style', null);
-	  }
-	}
+  if($(elem.parentNode.parentNode.parentNode).next().attr('class') == "table-crit table-warning") {
+    if($(elem.parentNode.parentNode.parentNode).next().attr('style') == null){
+      $(elem.parentNode.parentNode.parentNode).next().attr('style', 'display: none;');
+    } else {
+      $(elem.parentNode.parentNode.parentNode).next().attr('style', null);
+    }
+  }
 }
 
 ///////////////////////////
