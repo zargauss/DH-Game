@@ -90,7 +90,7 @@
                 <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="PWR" type="button" class="btn btn-outline-info" onclick="ShowModalChange('PWR', 'setPWR', 'modalPWR')">3 <!-- PWR --></button>
                   <button id= "PWR-MAX" type="button" class="btn btn-info" style="font-weight:900" disabled> 3
-                    <i class="fas fa-fire"></i></button>
+                    <i class="fab fa-cloudsmith"></i></button>
                 </div>
 
                 <div class="btn-group btn-up" role="group" aria-label="">
@@ -152,13 +152,14 @@
                                                        </td>
                   <td class="align-middle">Morsure de sang <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
-													   <div class="btn-group btn-group-sm" role="group">
+													   
+													   <div class="btn-group btn-group-sm" role="group" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-info btn-sm 2" disabled>Spirit <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-info btn-sm dmg" disabled><b class="dmg-min">0</b><b> - </b><b class="dmg-max">1</b> <!-- DMG -->
@@ -168,7 +169,7 @@
                                                        </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
                   							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
-                  							             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success">+4</span></button>
+                  							             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success">+3</span></button>
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
@@ -261,7 +262,7 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-secondary"> 
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
                   </button></td>
                   <td class="align-middle">Effusion <!-- NOM -->
                                           </td>
@@ -285,7 +286,7 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
                   <td class="align-middle">Lien de sang<!-- NOM -->
                                           </td>
@@ -309,7 +310,7 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
                   <td class="align-middle">Ponction <!-- NOM -->
                                           </td>
@@ -320,9 +321,9 @@
                                                          </b></button>
                                                        </div></td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							             <button type="button" class="btn btn-outline-success btn-sm" disabled>1 EC</button>
-                  							             <button type="button" class="btn btn-success btn-sm" disabled>Saignement <span class="badge badge-light badge-pill text-success">2</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                          Vous êtes soigné du double du montant infligé.</td>
+                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
+                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Saignement <span class="badge badge-light badge-pill text-danger">2</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                         </div>      <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Vous êtes soigné du double du montant infligé</button><div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">2</b>
                                                        </button></td>                        
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
