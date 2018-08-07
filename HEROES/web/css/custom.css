@@ -1,0 +1,26 @@
+.btn-up {
+  padding-right: 10px;
+}
+.btn-list {
+  margin-bottom: 5px;
+}
+.btn:focus {
+  box-shadow: none;
+}
+.btn:active:focus {
+  box-shadow: none;
+}
+.btn-CD, .Up, .Down, .Atq, .lock, .reset {
+  width: 32px;
+}
+.btn-modal-atq {
+  padding-bottom: 10px;
+}
+th, td {
+  padding: .4rem!important;
+}
+#img {
+  background-image: url('https://images2.alphacoders.com/595/thumb-1920-595402.jpg');
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+}
