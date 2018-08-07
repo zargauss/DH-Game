@@ -50,7 +50,11 @@ if($(elem.parentNode.parentNode).find('.dmg').length > 0) {
     if($(obj).attr('class') == "btn btn-primary btn-sm dmg") {
       type = "primary";
     } else {
-      type = "danger";
+      if($(obj).attr('class') == "btn btn-danger btn-sm dmg") {
+        type = "danger";
+      } else {
+        type = "success";
+      }
     }
     
     // Add DMG on modal
@@ -88,7 +92,11 @@ if($(elem.parentNode.parentNode).find('.dmg').length > 0) {
     if($(obj).attr('class') == "btn btn-primary btn-sm dmg-crit") {
       type = "primary";
     } else {
-      type = "danger";
+      if($(obj).attr('class') == "btn btn-danger btn-sm dmg-crit") {
+        type = "danger";
+      } else {
+        type = "success";
+      }
     }
 
     // Add DMG on modal
