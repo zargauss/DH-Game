@@ -465,13 +465,3 @@ $('.add-Debuff').click(function () {
 $('.add-Buff').click(function () {
    ShowAddBuff();
 });
-
-// Remove Buff on Btn
-$('.btn-close').click(function () {
-   RemoveBuff(this);
-});
-
-// Add Tour on Btn
-$('.btn-plus').click(function () {
-   PlusBuff(this);
-});
