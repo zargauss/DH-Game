@@ -20,11 +20,7 @@
       .btn:active:focus {
         box-shadow: none;
       }
-      .container {
-        width: auto;
-        max-width: 680px;
-        padding: 0 15px;
-      }
+
       .footer {
         position: absolute;
         bottom: 0;
@@ -37,22 +33,44 @@
 
   </head>
 
-  <body class="bg-light">
-    <div class="container-fluid">
-      <div class="row justify-content-md-center" style="padding-top: 20px;"><h3>CHOICES :</h3></div>
-      <div class="row justify-content-md-center" style="margin-top: 30px; padding-bottom: 15px;">
-        <div class="col-lg-3">
-          <a role="button" class="btn btn-outline-danger btn-block" href="BOSS/index.html">BOSS</a>
-        </div>
-        <div class="col-lg-3">
-          <a role="button" class="btn btn-outline-success btn-block" href="HEROES/index.html">HEROES</a>
-        </div>
-        <div class="col-lg-3">
-          <a role="button" class="btn btn-outline-danger btn-block" href="MOB/index.html">MOBS</a>
+  <body class="bg">
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><i class="fas fa-dice"></i>  DH - Game</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-success" href="HEROES/index.html" style="padding-right: 15px;"><i class="fas fa-user-circle" style="padding-right: 5px;"></i> HEROES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="MOB/index.html" style="padding-right: 15px;"><i class="fab fa-wolf-pack-battalion" style="padding-right: 5px;"></i> MOBS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="BOSS/index.html" style="padding-right: 15px;"><i class="fas fa-skull" style="padding-right: 5px;"></i> BOSS</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="row justify-content-md-center" style="padding-top: 20px;"><h3>RULES :</h3></div>
-    </div>
+    </nav>
+
+    <!-- CONTAINER -->
+    <main role="main" class="container" style="padding-top: 50px;">
+      <div class="jumbotron">
+        <h1>RULES N°1 :</h1>
+        <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend the width of the viewport, others are confined within a <code>.container</code>.</p>
+        <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to toggle the collapsed content.</p>
+      </div>
+      <div class="jumbotron">
+        <h1>RULES N°2 :</h1>
+        <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend the width of the viewport, others are confined within a <code>.container</code>.</p>
+        <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to toggle the collapsed content.</p>
+      </div>
+    </main>
     <!-- FOOTER -->
     <footer class="footer text-center">
       <div class="container">
