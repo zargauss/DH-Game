@@ -446,6 +446,17 @@ function randomDebuff() {
   $('#modalrandomdebuff').modal('show');
 }
 
+///////////////////////////
+// RANDOM BUFF
+function randomBuff() {
+  var buff = ["Chanceux", "Épine", "Esquive", "Furtivité", "Infusion", "Protection", "Puissance", "Réflexion", "Restauration", "Retour", "Sacrifice", "Accélération", "Solide"];
+
+  $('#randombuff').text("");
+  $('#randombuff').text(buff[getRandomArbitrary(0, buff.length - 1)]);
+
+  $('#modalrandombuff').modal('show');
+}
+
 //////////////////////////
 // Set Click Buttons
 // Set OnClick Function on .Down & .Up Class
