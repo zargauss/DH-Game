@@ -221,11 +221,11 @@ $('#Debuff_list:last')
         .attr('class', 'btn-plus btn btn-danger btn-list')
         .html('<i class="fas fa-plus"></i>')));
 
-$('.btn-close').click(function () {
+$('#Debuff_list .btn-close:last').click(function () {
    RemoveBuff(this);
 });
 
-$('.btn-plus').click(function () {
+$('#Debuff_list .btn-plus:last').click(function () {
      PlusBuff(this);
 });
 
@@ -264,11 +264,11 @@ $('#Buff_list:last')
         .attr('class', 'btn-close btn btn-success btn-list')
         .html('<i class="fas fa-times"></i>')));
 
-$('.btn-close').click(function () {
+$('#Buff_list .btn-close:last').click(function () {
    RemoveBuff(this);
 });
 
-$('.btn-plus').click(function () {
+$('#Buff_list .btn-plus:last').click(function () {
      PlusBuff(this);
 });
 
@@ -464,14 +464,4 @@ $('.add-Debuff').click(function () {
 // Add Buff
 $('.add-Buff').click(function () {
    ShowAddBuff();
-});
-
-// Remove Buff on Btn
-$('.btn-close').click(function () {
-   RemoveBuff(this);
-});
-
-// Add Tour on Btn
-$('.btn-plus').click(function () {
-   PlusBuff(this);
 });

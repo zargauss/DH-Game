@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="images/dice.png">
 
-    <title>DHGame Sorcier MIALTAMAR</title>
+    <title>Sorcier MIALTAMAR</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -13,32 +13,14 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-   <!-- CSS de la feuille -->
+    <!-- CSS Général -->
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- CSS de la feuille -->
     <style type="text/css">
-      .btn-up {
-        padding-right: 10px;
-      }
-      .btn-list {
-        margin-bottom: 5px;
-      }
-      .btn:focus {
-        box-shadow: none;
-      }
-      .btn:active:focus {
-        box-shadow: none;
-      }
-      .btn-CD {
-        width: 32px;
-      }
-      .btn-modal-atq {
-        padding-bottom: 10px;
-      }
-      th, td {
-        padding: .4rem!important;
-      }
       #img {
         background-image: url('https://i.pinimg.com/564x/e4/ea/8c/e4ea8c9fbcf16da0ed3eeb3f6188b7a3.jpg');
-		    background-position: center;
+  	    background-position: center;
         background-repeat: no-repeat;
         border-radius: 0.5rem;
       }
@@ -72,7 +54,7 @@
             	<div class="row justify-content-center text-center">
                 <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="PV" type="button" class="btn btn-outline-success" onclick="ShowModalChange('PV', 'setPV', 'modalPV')">35 <!-- PV --></button>
-                  <button type="button" class="btn btn-success" disabled><b id="PV-MAX-B"> 35 </b> <!-- PV MAX -->
+                  <button type="button" class="btn btn-success" disabled><b id="PV-MAX-B"> 38 </b> <!-- PV MAX -->
                     <input id="PV-MAX" type="hidden" name="" value="45"> <!-- PV MAX -->
                       <i class="far fa-heart fa-lg"></i></button>
                 </div>
@@ -91,7 +73,7 @@
                     <i class="fas fa-shield-alt fa-lg"></i></button>
                 </div>
 				
-				<div class="btn-group btn-up" role="group" aria-label="">
+				        <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="INI" type="button" class="btn btn-dark" disabled><b>BOSS</b> <!-- COST --></button>
                 </div>
               </div>
@@ -163,7 +145,7 @@
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">5</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                      
@@ -211,7 +193,7 @@
                   <td class="align-middle">Prison <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
-                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EA <!-- Zone / 1 E / Etc ... -->
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>2 EA <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
                                                          </b></button>
@@ -219,15 +201,15 @@
                                                        </td>
                   <td class="align-middle">
                                            <div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC </button>
+                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>2 EA </button>
                   							             <button type="button" class="btn btn-danger btn-sm" disabled>Brûlure  <span class="badge badge-light badge-pill text-danger">3</span></button>
                                            </div>
 										     <div class="btn-group btn-group-sm" role="group" aria-label="">
                   							             <button type="button" class="btn btn-danger btn-sm" disabled>Electrocution  <span class="badge badge-light badge-pill text-danger">3</span></button>
                                            </div>
                                            </td>
-                 <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
-                                        <input type="hidden" class="CD" value=4> </td>                         
+                 <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>4</button>
+                                                      <input type="hidden" class="CD" value=4></td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
                 </tr>
@@ -250,8 +232,8 @@
                                            </div>
 										   
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
-                                        <input type="hidden" class="CD" value=5> </td>                         
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>4</button>
+                                        <input type="hidden" class="CD" value=4> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
                 </tr>
@@ -262,7 +244,12 @@
                                           </button></td>
                   <td class="align-middle">Multi-magies <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center">
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">3</b> <!-- DMG -->
+                                                         </button>
+                                                       </div>
                                                        </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                     						             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC </button>
@@ -275,8 +262,8 @@
                     						             <button type="button" class="btn btn-danger btn-sm" disabled>Poison  <span class="badge badge-light badge-pill text-danger">+ 3</span></button>
                                            </div>
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
-                                        <input type="hidden" class="CD" value=6> </td>                         
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>4</button>
+                                        <input type="hidden" class="CD" value=4> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
                 </tr>
@@ -318,7 +305,7 @@
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">5</b><b> - </b><b class="dmg-max">8</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
@@ -331,7 +318,7 @@
                     						             <button type="button" class="btn btn-success btn-sm" disabled>Retour  <span class="badge badge-light badge-pill text-success">3</span></button>
                                            </div>
                                    
-                    <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
+                    <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>3</button>
                                         <input type="hidden" class="CD" value=3> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
@@ -360,7 +347,7 @@
                                            
 										   
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>3</button>
                                         <input type="hidden" class="CD" value=3> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
@@ -384,7 +371,7 @@
                                            </div>
 
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>3</button>
                                         <input type="hidden" class="CD" value=3> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
@@ -439,7 +426,7 @@
                                            </div>
                                            
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>2</button>
                                         <input type="hidden" class="CD" value=2> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
@@ -464,7 +451,7 @@
                                            </div>
 										    
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>2</button>
                                         <input type="hidden" class="CD" value=2> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
@@ -472,25 +459,29 @@
 
               </tbody>
             </table>
-          </div>
-
-          <!-- FIN DU TOUR | ROLL BUTTON | FIN DU NIVEAU -->
-          <div class="row justify-content-md-center" style="margin-top: 30px; padding-bottom: 15px;">
-          	<div class="col-lg-3">
-          		<button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()" style="border-radius: 3rem;"><i class="fas fa-hourglass-end"></i>   Fin du tour</button>
-          	</div>
-            <div class="col-md-auto text-center">
-              <button type="button" class="btn btn-info" onclick="ShowModalRoll()" style="border-radius: 3rem;"><i class="fas fa-dce"></i></button>
-            </div>
-            <div class="col-md-auto text-center">
-              <button type="button" class="btn btn-danger" onclick="randomDebuff()" style="border-radius: 3rem;"><i class="fas fa-dce"></i></button>
-            </div>
-          	<div class="col-lg-3">
-          		<button type="button" class="btn btn-outline-success btn-block" onclick="FinDuCombat()" style="border-radius: 3rem;"><i class="fas fa-door-closed"></i>   Fin du combat</button>
-          	</div>
-          </div>
+          </div> 
         </div>
       </div>
+      <!-- FOOTER -->
+      <footer class="fixed-bottom bg-light border-dark border-top">
+        <!-- FIN DU TOUR | ROLL BUTTON | FIN DU NIVEAU -->
+        <div class="container">
+          <div class="row justify-content-md-center" style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()"><i class="fas fa-hourglass-end"></i></button>
+            </div>
+            <div class="col-md-auto text-center">
+              <button type="button" class="btn btn-warning text-light" onclick="ShowModalRoll()"><i class="fas fa-dice-six fa-spin"></i></button>
+              <button type="button" class="btn btn-success" onclick="randomBuff()"><i class="far fa-question-circle fa-spin"></i></button>
+              <button type="button" class="btn btn-danger" onclick="randomDebuff()"><i class="far fa-question-circle fa-spin"></i></button>
+            </div>
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuCombat()"><i class="fas fa-door-closed"></i></button>   
+            </div>
+          </div>
+        </div>
+      </footer>
+
       <!-- Modals -->
       <!-- Roll Modal -->
       <div class="modal fade" id="modalRoll">
@@ -514,9 +505,8 @@
                 <h2 class="text-center" id="Roll"></h2>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-warning" id="RollModal" onclick="Roll()"><i class="fas fa-dice"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-warning text-light btn-block" id="RollModal" onclick="Roll()"><i class="fas fa-dice-six fa-spin"></i></button>
             </div>       
           </div>
         </div>
@@ -532,7 +522,7 @@
             </div>        
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
+               <button type="button" class="btn btn-danger btn-block" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
             </div>       
           </div>
         </div>
@@ -551,7 +541,7 @@
             </div>        
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
+               <button type="button" class="btn btn-warning btn-block" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
             </div>       
           </div>
         </div>
@@ -574,9 +564,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-success" onclick="SetChange('PV', 'setPV', 'modalPV')"><i class="far fa-heart fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">        
+               <button type="submit" class="btn btn-success btn-block" onclick="SetChange('PV', 'setPV', 'modalPV')"><i class="far fa-heart fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -599,9 +588,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-danger" onclick="SetChange('AR', 'setAR', 'modalAR')"><i class="fas fa-shield-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">        
+               <button type="submit" class="btn btn-danger btn-block" onclick="SetChange('AR', 'setAR', 'modalAR')"><i class="fas fa-shield-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -624,9 +612,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-primary" onclick="SetChange('BM', 'setBM', 'modalBM')"><i class="fas fa-shield-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">      
+               <button type="submit" class="btn btn-primary btn-block" onclick="SetChange('BM', 'setBM', 'modalBM')"><i class="fas fa-shield-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -649,9 +636,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-info" onclick="SetChange('PWR', 'setPWR', 'modalPWR')"><i class="fas fa-bolt"></i></button>
+            <div class="modal-footer justify-content-center">       
+               <button type="submit" class="btn btn-info btn-block" onclick="SetChange('PWR', 'setPWR', 'modalPWR')"><i class="fas fa-bolt"></i></button>
             </div>       
           </div>
         </div>
@@ -674,15 +660,14 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-warning" onclick="SetChange('INI', 'setINI', 'modalINI')"><i class="fas fa-exchange-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-warning btn-block text-light" onclick="SetChange('INI', 'setINI', 'modalINI')"><i class="fas fa-exchange-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
       </div>
 
-      <!-- INI Modal -->
+      <!-- Random Debuffs -->
       <div class="modal fade" id="modalrandomdebuff">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">             
@@ -692,7 +677,21 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+            </div>       
+          </div>
+        </div>
+      </div>
+
+      <!-- Random Buffs -->
+      <div class="modal fade" id="modalrandombuff">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">             
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-success" disabled><b id="randombuff"></b>  <span class="badge badge-light badge-pill text-success">?</span></button>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center">
             </div>       
           </div>
         </div>
@@ -733,9 +732,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-danger" onclick="AddDeBuff()"><i class="fas fa-plus"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-danger btn-block" onclick="AddDeBuff()"><i class="fas fa-plus"></i></button>
             </div>       
           </div>
         </div>
@@ -771,19 +769,12 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-success" onclick="AddBuff()"><i class="fas fa-plus"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-success btn-block" onclick="AddBuff()"><i class="fas fa-plus"></i></button>
             </div>       
           </div>
         </div>
       </div>
-
-      <!-- FOOTER -->
-      <footer class="pt-5 text-muted text-center text-small bg-white" style="padding-bottom: 15px;">
-        <p class="mb-1">&copy; DHGame - 2018</p>
-      </footer> 
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="images/dice.png">
 
-    <title>DHGame TESLONIK</title>
+    <title>USURPER</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -13,29 +13,14 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+    <!-- CSS Général -->
+    <link rel="stylesheet" href="../css/custom.css">
+
     <!-- CSS de la feuille -->
-	<style type="text/css">
-      .btn-up {
-        padding-right: 10px;
-      }
-      .btn-list {
-        margin-bottom: 5px;
-      }
-      .btn:focus {
-        box-shadow: none;
-      }
-      .btn:active:focus {
-        box-shadow: none;
-      }
-      .btn-CD {
-        width: 32px;
-      }
-      .btn-modal-atq {
-        padding-bottom: 10px;
-      }
+	  <style type="text/css">
       #img {
         background-image: url('https://i.pinimg.com/564x/9c/b0/4d/9cb04d05f17039c50bde82b0d41bc8c0.jpg');
-		background-position: center;
+		    background-position: center;
         background-repeat: no-repeat;
       }
     </style>
@@ -90,12 +75,12 @@
                 <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="PWR" type="button" class="btn btn-outline-info" onclick="ShowModalChange('PWR', 'setPWR', 'modalPWR')">120 <!-- PWR --></button>
                   <button id= "PWR-MAX" type="button" class="btn btn-info" style="font-weight:900" disabled> 120
-                    <i class="fas fa-bolt"></i></button>
+                    <i class="fas fa-flask"></i></button>
                 </div>
 
                 <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="INI" type="button" class="btn btn-outline-warning" onclick="ShowModalChange('INI', 'setINI', 'modalINI')">500 <!-- INI --></button>
-                  <button type="button" class="btn btn-warning" disabled><i class="fas fa-exchange-alt fa-lg"></i></button>
+                  <button type="button" class="btn btn-warning text-light" disabled><i class="fas fa-exchange-alt fa-lg"></i></button>
                 </div>
               </div>
             </div>
@@ -141,7 +126,7 @@
                   <td class="align-middle">Au début de votre tour, vous pouvez choisir un debuff à ne pas appliquer. 
                   <td class="align-middle text-center">
                                           </td>
-	<!-- LIGNES -->
+	              <!-- LIGNES -->
                 <tr class="table-actif">
                   <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
                                                        </td>
@@ -161,8 +146,7 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" hidden disabled><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
-                      					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>.
                                           </td>
                 </tr>
               </tbody>
@@ -195,7 +179,7 @@
               <tbody>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
                   <td class="align-middle">Double-face <!-- NOM -->
                                           </td>
@@ -205,29 +189,29 @@
                                                          <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
-													   <div class="btn-group btn-group-sm" role="group" aria-label="">
+													                            <div class="btn-group btn-group-sm" role="group" style="padding-top: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 2" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                  <td class=""><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                                              <button type="button" class="btn btn-outline-warning btn-sm" disabled>Crit</button>
                                              <button type="button" class="CritValue btn btn-warning btn-sm text-light" onclick="Crit(this)"><b>25</b></button>
                                            </div>
                                            
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moispower">25</b>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moispower">25</b>  <i class="fas fa-flask"></i>
                                                        </button></td>
-                  <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
+                  <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
                       					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
 				
 				<!-- LIGNE -->
            <tr class="table-crit table-warning" style="display: none;"> 
-                  <td class="text-center align-middle"><button type="button" class="btn btn-sort btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center align-middle"><button type="button" class="btn btn-warning btn-sm" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
                   <td class="align-middle">Double-face critique <!-- NOM -->
                                           </td>
@@ -237,7 +221,7 @@
                                                          <button type="button" class="btn btn-danger btn-sm dmg-crit" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
-													   <div class="btn-group btn-group-sm" role="group" aria-label="">
+													   <div class="btn-group btn-group-sm" role="group" style="padding-top: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 2" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg-crit" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
@@ -255,7 +239,7 @@
 				
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
                   <td class="align-middle">Facade <!-- NOM -->
                                           </td>
@@ -274,7 +258,7 @@
                     						             <button type="button" class="btn btn-success btn-sm" disabled>Réflexion  <span class="badge badge-light badge-pill text-success">3</span></button>
                                            </div>
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">25</b>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">25</b>  <i class="fas fa-flask"></i>
                                                        </button></td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
@@ -282,7 +266,7 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-secondary"> 
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
                   </button></td>
                   <td class="align-middle">Bloom <!-- NOM -->
                                           </td>
@@ -298,7 +282,7 @@
                                           </div>	
                                          
                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">40</b>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">40</b>  <i class="fas fa-flask"></i>
                                                        </button></td>                        
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)" disabled><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button>
@@ -306,7 +290,7 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
                   <td class="align-middle">Lever le masque<!-- NOM -->
                                           </td>
@@ -322,7 +306,7 @@
                                            </div>
                   						          
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">25</b>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">25</b>  <i class="fas fa-flask"></i>
                                                        </button></td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
@@ -341,7 +325,7 @@
                                              <button type="button" class="btn btn-success btn-sm" disabled>Accélération <span class="badge badge-light badge-pill text-success">1</span></button>
                                            </div> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">40</b>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">40</b>  <i class="fas fa-flask"></i>
                                                        </button></td>                        
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
@@ -364,7 +348,7 @@
                                              <button type="button" class="btn btn-danger btn-sm" disabled>Peur  <span class="badge badge-light badge-pill text-danger">1</span></button>
                                            </div> 
                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="pluspower">40</b>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="pluspower">40</b>  <i class="fas fa-flask"></i>
                                                        </button></td>                        
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)" disabled><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Down btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button>
@@ -447,24 +431,29 @@
               </tbody>
             </table>
           </div>
-
-          <!-- FIN DU TOUR | ROLL BUTTON | FIN DU NIVEAU -->
-          <div class="row justify-content-md-center" style="margin-top: 30px; padding-bottom: 15px;">
-          	<div class="col-lg-3">
-          		<button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()" style="border-radius: 3rem;"><i class="fas fa-hourglass-end"></i>   Fin du tour</button>
-          	</div>
-            <div class="col-md-auto text-center">
-              <button type="button" class="btn btn-info" onclick="ShowModalRoll()" style="border-radius: 3rem;"><i class="fas fa-dce"></i></button>
-            </div>
-            <div class="col-md-auto text-center">
-              <button type="button" class="btn btn-danger" onclick="randomDebuff()" style="border-radius: 3rem;"><i class="fas fa-dce"></i></button>
-            </div>
-          	<div class="col-lg-3">
-          		<button type="button" class="btn btn-outline-success btn-block" onclick="FinDuCombat()" style="border-radius: 3rem;"><i class="fas fa-door-closed"></i>   Fin du combat</button>
-          	</div>
-          </div>
         </div>
       </div>
+
+      <!-- FOOTER -->
+      <footer class="fixed-bottom bg-light border-dark border-top">
+        <!-- FIN DU TOUR | ROLL BUTTON | FIN DU NIVEAU -->
+        <div class="container">
+          <div class="row justify-content-md-center" style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()"><i class="fas fa-hourglass-end"></i></button>
+            </div>
+            <div class="col-md-auto text-center">
+              <button type="button" class="btn btn-warning text-light" onclick="ShowModalRoll()"><i class="fas fa-dice-six fa-spin"></i></button>
+              <button type="button" class="btn btn-success" onclick="randomBuff()"><i class="far fa-question-circle fa-spin"></i></button>
+              <button type="button" class="btn btn-danger" onclick="randomDebuff()"><i class="far fa-question-circle fa-spin"></i></button>
+            </div>
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuCombat()"><i class="fas fa-door-closed"></i></button>   
+            </div>
+          </div>
+        </div>
+      </footer>
+
       <!-- Modals -->
       <!-- Roll Modal -->
       <div class="modal fade" id="modalRoll">
@@ -488,9 +477,8 @@
                 <h2 class="text-center" id="Roll"></h2>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-warning" id="RollModal" onclick="Roll()"><i class="fas fa-dice"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-warning text-light btn-block" id="RollModal" onclick="Roll()"><i class="fas fa-dice-six fa-spin"></i></button>
             </div>       
           </div>
         </div>
@@ -506,7 +494,7 @@
             </div>        
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
+               <button type="button" class="btn btn-danger btn-block" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
             </div>       
           </div>
         </div>
@@ -525,7 +513,7 @@
             </div>        
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
+               <button type="button" class="btn btn-warning btn-block" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
             </div>       
           </div>
         </div>
@@ -548,9 +536,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-success" onclick="SetChange('PV', 'setPV', 'modalPV')"><i class="far fa-heart fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">        
+               <button type="submit" class="btn btn-success btn-block" onclick="SetChange('PV', 'setPV', 'modalPV')"><i class="far fa-heart fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -573,9 +560,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-danger" onclick="SetChange('AR', 'setAR', 'modalAR')"><i class="fas fa-shield-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">        
+               <button type="submit" class="btn btn-danger btn-block" onclick="SetChange('AR', 'setAR', 'modalAR')"><i class="fas fa-shield-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -598,9 +584,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-primary" onclick="SetChange('BM', 'setBM', 'modalBM')"><i class="fas fa-shield-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">      
+               <button type="submit" class="btn btn-primary btn-block" onclick="SetChange('BM', 'setBM', 'modalBM')"><i class="fas fa-shield-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -623,9 +608,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-info" onclick="SetChange('PWR', 'setPWR', 'modalPWR')"><i class="fas fa-bolt"></i></button>
+            <div class="modal-footer justify-content-center">       
+               <button type="submit" class="btn btn-info btn-block" onclick="SetChange('PWR', 'setPWR', 'modalPWR')"><i class="fas fa-bolt"></i></button>
             </div>       
           </div>
         </div>
@@ -648,15 +632,14 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-warning" onclick="SetChange('INI', 'setINI', 'modalINI')"><i class="fas fa-exchange-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-warning btn-block text-light" onclick="SetChange('INI', 'setINI', 'modalINI')"><i class="fas fa-exchange-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
       </div>
 
-      <!-- INI Modal -->
+      <!-- Random Debuffs -->
       <div class="modal fade" id="modalrandomdebuff">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">             
@@ -666,7 +649,21 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+            </div>       
+          </div>
+        </div>
+      </div>
+
+      <!-- Random Buffs -->
+      <div class="modal fade" id="modalrandombuff">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">             
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-success" disabled><b id="randombuff"></b>  <span class="badge badge-light badge-pill text-success">?</span></button>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center">
             </div>       
           </div>
         </div>
@@ -700,16 +697,15 @@
                       <option>Silence</option> 
                       <option>Suppression</option> 
                       <option>Vulnérable</option>
-                      <option>Provocation</option>					  
+                      <option>Provocation</option>            
                     </select>
                     <input id="setTourD" type="number" class="form-control text-center border-danger text-danger" value="1">
                  </div>
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-danger" onclick="AddDeBuff()"><i class="fas fa-plus"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-danger btn-block" onclick="AddDeBuff()"><i class="fas fa-plus"></i></button>
             </div>       
           </div>
         </div>
@@ -737,7 +733,7 @@
                       <option>Restauration</option> 
                       <option>Retour</option>
                       <option>Sacrifice</option>
-                      <option>Accélération</option> 					  
+                      <option>Accélération</option>             
                       <option>Solide</option> 
                     </select>
                     <input id="setTourB" type="number" class="form-control text-center border-success text-success" value="1">
@@ -745,19 +741,12 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-success" onclick="AddBuff()"><i class="fas fa-plus"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-success btn-block" onclick="AddBuff()"><i class="fas fa-plus"></i></button>
             </div>       
           </div>
         </div>
       </div>
-
-      <!-- FOOTER -->
-      <footer class="pt-5 text-muted text-center text-small bg-white" style="padding-bottom: 15px;">
-        <p class="mb-1">&copy; DHGame - 2018</p>
-      </footer> 
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -768,7 +757,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 
     <!-- JavaScript Of The Game : Functions ++ -->
-    <script src="javascript/gameFunctions.js"></script>
+    <script src="javascript/gameFunctionsMANA.js"></script>
 
   </body>
 </html>

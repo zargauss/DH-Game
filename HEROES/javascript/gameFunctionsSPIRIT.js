@@ -386,7 +386,7 @@ $('.btn-B').each(function(i, obj) {
 })
 
 // PWR 0
-$('#PWR').text(0);
+$('#PWR').text($('#PWR-MAX').text());
 }
 
 ////////////////////////
@@ -444,6 +444,17 @@ function randomDebuff() {
   $('#randomdebuff').text(debuff[getRandomArbitrary(0, debuff.length - 1)]);
 
   $('#modalrandomdebuff').modal('show');
+}
+
+///////////////////////////
+// RANDOM BUFF
+function randomBuff() {
+  var buff = ["Chanceux", "Épine", "Esquive", "Furtivité", "Infusion", "Protection", "Puissance", "Réflexion", "Restauration", "Retour", "Sacrifice", "Accélération", "Solide"];
+
+  $('#randombuff').text("");
+  $('#randombuff').text(buff[getRandomArbitrary(0, buff.length - 1)]);
+
+  $('#modalrandombuff').modal('show');
 }
 
 //////////////////////////
