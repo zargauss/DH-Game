@@ -351,7 +351,7 @@ function FinDuTour() {
     tour = parseInt($(obj).find('.btn-CD').text());
     if(tour == 1) {
       $(obj).find('.btn-CD').attr('class', 'btn-CD btn btn-success btn-sm font-weight-bold');
-      $(obj).find('.btn-CD').text($(obj.parentNode.parentNode).find('.CD').val());
+      $(obj).find('.btn-CD').text(CD);
       $(obj).find('.Atq').attr('disabled', false);
       $(obj).attr('class', '');
     } else {

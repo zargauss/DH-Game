@@ -8,6 +8,7 @@
 function ShowModalRoll(){
 // Show modal
 $('#modalRoll').modal('show');
+$("#Roll").text("");
 }
 
 // Random Roll
@@ -350,7 +351,7 @@ function FinDuTour() {
     tour = parseInt($(obj).find('.btn-CD').text());
     if(tour == 1) {
       $(obj).find('.btn-CD').attr('class', 'btn-CD btn btn-success btn-sm font-weight-bold');
-      $(obj).find('.btn-CD').html('<i class="fas fa-check"></i>');
+      $(obj).find('.btn-CD').text(CD);
       $(obj).find('.Atq').attr('disabled', false);
       $(obj).attr('class', '');
     } else {
@@ -433,6 +434,17 @@ function randomDebuff() {
   $('#randomdebuff').text(debuff[getRandomArbitrary(0, debuff.length - 1)]);
 
   $('#modalrandomdebuff').modal('show');
+}
+
+///////////////////////////
+// RANDOM BUFF
+function randomBuff() {
+  var buff = ["Chanceux", "Épine", "Esquive", "Furtivité", "Infusion", "Protection", "Puissance", "Réflexion", "Restauration", "Retour", "Sacrifice", "Accélération", "Solide"];
+
+  $('#randombuff').text("");
+  $('#randombuff').text(buff[getRandomArbitrary(0, buff.length - 1)]);
+
+  $('#modalrandombuff').modal('show');
 }
 
 //////////////////////////
