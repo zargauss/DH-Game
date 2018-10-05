@@ -349,16 +349,158 @@ function getRandomArbitrary(min, max){
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+//////////////////////
+// PlusStatus Function
+function PlusStatus(obj) {
+  tour = parseInt($(obj.parentNode).find('.status').text());
+  $(obj.parentNode).find('.status').text(tour + 1);
+
+  // IF PUISS
+  if($(obj.parentNode).find('.status').attr('id') == 'PUISS'){
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+  }
+
+  // IF INFU
+  if($(obj.parentNode).find('.status').attr('id') == 'INFU'){
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+  }
+}
+
+//////////////////////
+// MinusStatus Function
+function MinusStatus(obj) {
+  tour = parseInt($(obj.parentNode).find('.status').text());
+  if(tour == 0){
+  } else {
+    $(obj.parentNode).find('.status').text(tour - 1);
+
+  // IF PUISS
+  if($(obj.parentNode).find('.status').attr('id') == 'PUISS'){
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+  }
+
+  // IF INFU
+  if($(obj.parentNode).find('.status').attr('id') == 'INFU'){
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+  }
+  }
+}
+
 ///////////////////////
-// Fin du tour
+// Début du tour
 function FinDuTour() {
+
+// EFFECT OF STATUS
+if(parseInt($('#POISON').text()) > 0){
+  pv = parseInt($('#PV').text());
+  poison = parseInt($('#POISON').text());
+  $('#PV').text(pv - poison);
+}
+
+if(parseInt($('#SAIGN').text()) > 0){
+  pv = parseInt($('#PV').text());
+  ar = parseInt($('#AR').text());
+  saign = parseInt($('#SAIGN').text());
+  if(ar < saign){
+    $('#AR').text(0);
+    $('#PV').text(pv - (saign - ar));
+  } else {
+    $('#AR').text(ar - saign);
+  }
+}
+
+if($('#BRUL').text() > 0){
+  pv = parseInt($('#PV').text());
+  bm = parseInt($('#BM').text());
+  brul = parseInt($('#BRUL').text());
+  if(bm < brul){
+    $('#BM').text(0);
+    $('#PV').text(pv - (brul - bm));
+  } else {
+    $('#BM').text(bm - brul);
+  }
+}
+
+// IF PUISS
+if($('#PUISS').text() > 0){
+  $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+}
+
+// IF INFU
+if($('#INFU').text() > 0){
+  $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+}
+
 // -1 ALL DEBUFFS/BUFFS
 $('.btn-B').each(function(i, obj) {
   tour = $(obj).children().text();
   if(tour == 1) {
     $(obj.parentNode).remove();
   } else {
-    $(obj).children().text(tour - 1)
+    $(obj).children().text(tour - 1);
+  }
+})
+
+// -1 ALL STATUS
+$('.status').each(function(i, obj) {
+  tour = parseInt($(obj).text());
+  if(tour == 0) {
+  } else {
+    $(obj).text(tour - 1);
   }
 })
 
@@ -385,7 +527,24 @@ $('.btn-B').each(function(i, obj) {
   $(obj.parentNode).remove();
 })
 
-// PWR NOT TOUCH
+// PWR
+if($('#TYPE-ENER').val() == "MANA"){
+  // DO NOTHING
+  console.log('test')
+}
+
+if($('#TYPE-ENER').val() == "ENERGIE"){
+  $('#PWR').text(0);
+}
+
+if($('#TYPE-ENER').val() == "POWER"){
+  $('#PWR').text(parseInt($('#PWR').text())/2);
+}
+
+if($('#TYPE-ENER').val() == "SPIRIT"){
+  $('#PWR').text($('#PWR-MAX').text());
+}
+
 }
 
 ////////////////////////
