@@ -367,6 +367,16 @@ function PlusStatus(obj) {
       console.log(min)
       $(obj).text(min + 1);
     });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min + 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
   }
 
   // IF INFU
@@ -377,6 +387,26 @@ function PlusStatus(obj) {
       $(obj).text(min + 1);
     });
     $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min + 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
       min = parseInt($(obj).text());
       console.log(min)
       $(obj).text(min + 1);
@@ -404,6 +434,16 @@ function MinusStatus(obj) {
       console.log(min)
       $(obj).text(min - 1);
     });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
   }
 
   // IF INFU
@@ -414,6 +454,26 @@ function MinusStatus(obj) {
       $(obj).text(min - 1);
     });
     $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
       min = parseInt($(obj).text());
       console.log(min)
       $(obj).text(min - 1);
@@ -469,6 +529,16 @@ if($('#PUISS').text() > 0){
     console.log(min)
     $(obj).text(min - 1);
   });
+  $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
 }
 
 // IF INFU
@@ -479,6 +549,26 @@ if($('#INFU').text() > 0){
     $(obj).text(min - 1);
   });
   $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+  });
+  $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
     min = parseInt($(obj).text());
     console.log(min)
     $(obj).text(min - 1);
@@ -526,6 +616,64 @@ $('.table-danger').each(function(i, obj) {
 $('.btn-B').each(function(i, obj) {
   $(obj.parentNode).remove();
 })
+
+// RESET DMG IF PUISS & INFU
+$('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#INFU').text());
+  });
+$('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#INFU').text());
+  });
+$('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#INFU').text());
+  });
+$('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#INFU').text());
+  });
+$('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#INFU').text());
+  });
+$('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#INFU').text());
+  });
+$('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#PUISS').text());
+  });
+$('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#PUISS').text());
+  });
+$('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#PUISS').text());
+  });
+$('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - $('#PUISS').text());
+  });
+
+// REMOVE ALL STATUS
+$('.status').each(function(i, obj) {
+  tour = parseInt($(obj).text());
+  $(obj).text(0);
+});
 
 // PWR
 if($('#TYPE-ENER').val() == "MANA"){
@@ -633,3 +781,46 @@ $('.add-Debuff').click(function () {
 $('.add-Buff').click(function () {
    ShowAddBuff();
 });
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////
+// FOR CLASSES
+
+// LORKER
+
+function Armuredelours(truc){
+  if($(truc.parentNode.parentNode).attr('class') == "table-secondary") {
+    $('.pluspower').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant + 2);
+    });
+  } else {
+    $('.pluspower').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant - 2);
+    });
+  }
+}
+
+function Armuredutrapeur(truc){
+  if($(truc.parentNode.parentNode).attr('class') == "table-secondary") {
+    $('.CritValue').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant + 15);
+    });
+  } else {
+    $('.CritValue').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant - 15);
+    });
+  }
+}
