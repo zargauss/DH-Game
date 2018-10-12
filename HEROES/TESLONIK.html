@@ -411,7 +411,6 @@
               <thead class="thead-light">
                 <!-- NOMS COLONNES -->
                 <tr>
-                  <th scope="col" style="width: 6%">PV</th>
                   <th scope="col" style="width: 6%">AR</th>
                   <th scope="col" style="width: 6%">BM</th>
                   <th scope="col" style="width: 25%">Nom</th>
@@ -422,8 +421,6 @@
               <tbody>
                 <!-- LIGNE -->
                 <tr class="table-secondary">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-success btn-sm font-weight-bold PV-Armor" disabled>20
-                                                       </button></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm font-weight-bold AR-Amor" disabled>15
                                                        </button></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm font-weight-bold BM-Armor" disabled>15
@@ -437,8 +434,6 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-secondary">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-success btn-sm font-weight-bold PV-Armor" disabled>10
-                                                       </button></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm font-weight-bold AR-Amor" disabled>5
                                                        </button></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm font-weight-bold BM-Armor" disabled>5
@@ -462,7 +457,7 @@
         <div class="container">
           <div class="row justify-content-md-center" style="padding-top: 15px; padding-bottom: 15px;">
             <div class="col-lg-2">
-              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()"><i class="fas fa-hourglass-end"></i></button>
+              <button id="BTN_TOUR" type="button" class="btn btn-success btn-block" onclick="FinDuTour()">DEBUT DU TOUR</button>
             </div>
             <div class="col-md-auto text-center">
               <button type="button" class="btn btn-warning text-light" onclick="ShowModalRoll()"><i class="fas fa-dice-six fa-spin"></i></button>
