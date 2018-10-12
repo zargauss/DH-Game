@@ -156,38 +156,24 @@ if(parseInt($('#PWR').text()) >= $('#PWR-MAX').text()) {
 
 //////////////////
 // Down Function
-function Down(elem) {
-$(elem.parentNode.parentNode).attr('class', 'table-secondary');
-$(elem.parentNode).find('.Atq').attr('disabled', true);
-$(elem).attr('class', '');
-$(elem).attr('class', 'Up btn btn-success btn-sm');
-$(elem).html('<i class="fas fa-angle-double-up">');
-$(elem).click(function () {
-   Up(elem);
-});
+function UpDown(elem) {
+  if($(elem).attr('class') == "Down btn btn-danger btn-sm"){
+    $(elem.parentNode.parentNode).attr('class', 'table-secondary');
+    $(elem.parentNode).find('.Atq').attr('disabled', true);
+    $(elem).attr('class', 'Up btn btn-success btn-sm');
+    $(elem).html('<i class="fas fa-angle-double-up">');
+    console.log("test");
+  } else {
+    $(elem.parentNode.parentNode).attr('class', 'table-actif');
+    $(elem.parentNode).find('.Atq').attr('disabled', false);
+    $(elem).attr('class', 'Down btn btn-danger btn-sm');
+    $(elem).html('<i class="fas fa-times">');
+  }
 
-//SET ARMOR
-if($(elem.parentNode.parentNode.parentNode.parentNode).attr('id') == "table-armor") {
-  setArmor(elem);
-}
-}
-
-/////////////////
-// Up Function
-function Up(elem) {
-$(elem.parentNode.parentNode).toggleClass('table-secondary table-actif');
-$(elem.parentNode).find('.Atq').attr('disabled', false);
-$(elem).attr('class', '');
-$(elem).attr('class', 'Down btn btn-danger btn-sm');
-$(elem).html('<i class="fas fa-times">');
-$(elem).click(function () {
-   Down(elem);
-});
-
-//SET ARMOR
-if($(elem.parentNode.parentNode.parentNode.parentNode).attr('id') == "table-armor") {
-  setArmor(elem);
-}
+  //SET ARMOR
+  if($(elem.parentNode.parentNode.parentNode.parentNode).attr('id') == "table-armor") {
+    setArmor(elem);
+  }
 }
 
 ///////////////////////
@@ -483,123 +469,135 @@ function MinusStatus(obj) {
 }
 
 ///////////////////////
-// Début du tour
+// Début / Fin du tour
 function FinDuTour() {
 
-// EFFECT OF STATUS
-if(parseInt($('#POISON').text()) > 0){
-  pv = parseInt($('#PV').text());
-  poison = parseInt($('#POISON').text());
-  $('#PV').text(pv - poison);
-}
+  if($('#BTN_TOUR').text() == "DEBUT DU TOUR"){
 
-if(parseInt($('#SAIGN').text()) > 0){
-  pv = parseInt($('#PV').text());
-  ar = parseInt($('#AR').text());
-  saign = parseInt($('#SAIGN').text());
-  if(ar < saign){
-    $('#AR').text(0);
-    $('#PV').text(pv - (saign - ar));
+      // EFFECT OF STATUS
+      if(parseInt($('#POISON').text()) > 0){
+        pv = parseInt($('#PV').text());
+        poison = parseInt($('#POISON').text());
+        $('#PV').text(pv - poison);
+      }
+
+      if(parseInt($('#SAIGN').text()) > 0){
+        pv = parseInt($('#PV').text());
+        ar = parseInt($('#AR').text());
+        saign = parseInt($('#SAIGN').text());
+        if(ar < saign){
+          $('#AR').text(0);
+          $('#PV').text(pv - (saign - ar));
+        } else {
+          $('#AR').text(ar - saign);
+        }
+      }
+
+      if($('#BRUL').text() > 0){
+        pv = parseInt($('#PV').text());
+        bm = parseInt($('#BM').text());
+        brul = parseInt($('#BRUL').text());
+        if(bm < brul){
+          $('#BM').text(0);
+          $('#PV').text(pv - (brul - bm));
+        } else {
+          $('#BM').text(bm - brul);
+        }
+      }
+
+    $('#BTN_TOUR').text("FIN DU TOUR");
+    $('#BTN_TOUR').attr('class', "btn btn-danger btn-block");
+
   } else {
-    $('#AR').text(ar - saign);
+
+      // IF PUISS
+      if($('#PUISS').text() > 0){
+        $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+      }
+
+      // IF INFU
+      if($('#INFU').text() > 0){
+        $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+      }
+
+      // -1 ALL DEBUFFS/BUFFS
+      $('.btn-B').each(function(i, obj) {
+        tour = $(obj).children().text();
+        if(tour == 1) {
+          $(obj.parentNode).remove();
+        } else {
+          $(obj).children().text(tour - 1);
+        }
+      });
+
+      // -1 ALL STATUS
+      $('.status').each(function(i, obj) {
+        tour = parseInt($(obj).text());
+        if(tour == 0) {
+        } else {
+          $(obj).text(tour - 1);
+        }
+      });
+
+      // ALL COMP RED -> ACTIF
+      $('.table-danger').each(function(i, obj) {
+        $(obj).attr('class', '');
+        $(obj).attr('class', 'table-actif');
+        $(obj).find('.Atq').attr('disabled', false);
+      });
+
+    $('#BTN_TOUR').text("DEBUT DU TOUR");
+    $('#BTN_TOUR').attr('class', "btn btn-success btn-block");
+
   }
-}
-
-if($('#BRUL').text() > 0){
-  pv = parseInt($('#PV').text());
-  bm = parseInt($('#BM').text());
-  brul = parseInt($('#BRUL').text());
-  if(bm < brul){
-    $('#BM').text(0);
-    $('#PV').text(pv - (brul - bm));
-  } else {
-    $('#BM').text(bm - brul);
-  }
-}
-
-// IF PUISS
-if($('#PUISS').text() > 0){
-  $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-}
-
-// IF INFU
-if($('#INFU').text() > 0){
-  $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-  $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
-    min = parseInt($(obj).text());
-    console.log(min)
-    $(obj).text(min - 1);
-  });
-}
-
-// -1 ALL DEBUFFS/BUFFS
-$('.btn-B').each(function(i, obj) {
-  tour = $(obj).children().text();
-  if(tour == 1) {
-    $(obj.parentNode).remove();
-  } else {
-    $(obj).children().text(tour - 1);
-  }
-})
-
-// -1 ALL STATUS
-$('.status').each(function(i, obj) {
-  tour = parseInt($(obj).text());
-  if(tour == 0) {
-  } else {
-    $(obj).text(tour - 1);
-  }
-})
-
-// ALL COMP RED -> ACTIF
-$('.table-danger').each(function(i, obj) {
-  $(obj).attr('class', '');
-  $(obj).attr('class', 'table-actif');
-  $(obj).find('.Atq').attr('disabled', false);
-})
 }
 
 ///////////////////////
@@ -699,29 +697,23 @@ if($('#TYPE-ENER').val() == "SPIRIT"){
 function setArmor(elem) {
 
 if($(elem.parentNode.parentNode).attr('class') == "table-actif") {
-  PV = parseInt($(elem.parentNode.parentNode).find('.PV-Armor').text());
   AR = parseInt($(elem.parentNode.parentNode).find('.AR-Amor').text());
   BM = parseInt($(elem.parentNode.parentNode).find('.BM-Armor').text());
 
-  PVMAX = parseInt($('#PV-MAX').val());
   ARMAX  = parseInt($('#AR-MAX').val());
   BMMAX = parseInt($('#BM-MAX').val());
 
-  PVARMOR = PV + PVMAX; 
   ARARMOR = AR + ARMAX;
   BMARMOR = BM + BMMAX;
 
-  $('#PV-MAX-B').text(PVARMOR);
   $('#AR-MAX-B').text(ARARMOR);
   $('#BM-MAX-B').text(BMARMOR);
 
 } else {
 
-  PVMAX = parseInt($('#PV-MAX').val());
   ARMAX  = parseInt($('#AR-MAX').val());
   BMMAX = parseInt($('#BM-MAX').val());
 
-  $('#PV-MAX-B').text(PVMAX);
   $('#AR-MAX-B').text(ARMAX);
   $('#BM-MAX-B').text(BMMAX);
 }
@@ -766,10 +758,10 @@ function randomBuff() {
 // Set Click Buttons
 // Set OnClick Function on .Down & .Up Class
 $('.Down').click(function () {
-   Down(this);
+   UpDown(this);
 });
 $('.Up').click(function () {
-   Up(this);
+   UpDown(this);
 });
 
 // Add Debuff
