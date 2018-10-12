@@ -742,7 +742,7 @@ function Crit(elem){
 ///////////////////////////
 // RANDOM DEBUFF
 function randomDebuff() {
-  var debuff = ["Affaibli", "Aveuglement", "Brise armure", "Brûlure", "Confusion", "Electrocution", "Empoisonnement", "Faiblesse", "Gel mental", "Lien de vie", "Peur", 
+  var debuff = ["Affaibli", "Brûlure", "Confusion", "Poison", "Faiblesse", "Gel mental", "Lien de vie", "Peur", 
   "Potentialisation", "Ralentissement", "Saignement", "Silence", "Suppression", "Vulnérable", "Provocation"];
 
   $('#randomdebuff').text("");
@@ -784,17 +784,13 @@ $('.add-Buff').click(function () {
 
 
 
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////
+// FOR CLASSES
+//////////////////////////
 
 
 //////////////////////////
-// FOR CLASSES
-
 // LORKER
 
 function Armuredelours(truc){

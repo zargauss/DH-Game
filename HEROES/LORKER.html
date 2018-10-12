@@ -577,7 +577,7 @@
         <div class="container">
           <div class="row justify-content-md-center" style="padding-top: 15px; padding-bottom: 15px;">
             <div class="col-lg-2">
-              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()"><i class="fas fa-hourglass-end"></i></button>
+              <button id="BTN_TOUR" type="button" class="btn btn-success btn-block" onclick="FinDuTour()">DEBUT DU TOUR</button>
             </div>
             <div class="col-md-auto text-center">
               <button type="button" class="btn btn-warning text-light" onclick="ShowModalRoll()"><i class="fas fa-dice-six fa-spin"></i></button>
@@ -816,21 +816,15 @@
                 <form>
                   <div class="input-group mb-3">
                     <select id="selectDebuff" class="form-control border-danger text-danger">
-                      <option>Affaibli</option> 
-                      <option>Aveuglement</option> 
-                      <option>Brise armure</option>
-                      <option>Brûlure</option> 
+                      <option>Affaibli</option>
                       <option>Confusion</option> 
-                      <option>Electrocution</option> 
-                      <option>Empoisonnement</option> 
                       <option>Étourdissement</option> 
                       <option>Faiblesse</option> 
                       <option>Gel mental</option>
                       <option>Lien de vie</option>
                       <option>Peur</option> 
                       <option>Potentialisation</option> 
-                      <option>Ralentissement</option> 
-                      <option>Saignement</option> 
+                      <option>Ralentissement</option>
                       <option>Silence</option> 
                       <option>Suppression</option> 
                       <option>Vulnérable</option>
@@ -863,9 +857,7 @@
                       <option>Esquive</option> 
                       <option>Furtivité</option> 
                       <option>Immunité</option> 
-                      <option>Infusion</option> 
-                      <option>Protection</option> 
-                      <option>Puissance</option> 
+                      <option>Infusion</option>
                       <option>Réflexion</option> 
                       <option>Restauration</option> 
                       <option>Retour</option>
