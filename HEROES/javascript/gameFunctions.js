@@ -162,7 +162,6 @@ function UpDown(elem) {
     $(elem.parentNode).find('.Atq').attr('disabled', true);
     $(elem).attr('class', 'Up btn btn-success btn-sm');
     $(elem).html('<i class="fas fa-angle-double-up">');
-    console.log("test");
   } else {
     $(elem.parentNode.parentNode).attr('class', 'table-actif');
     $(elem.parentNode).find('.Atq').attr('disabled', false);
@@ -809,6 +808,42 @@ function Armuredutrapeur(truc){
     $('.CritValue').each(function(i, obj) {
       avant = parseInt($(obj).text());
       $(obj).text(avant - 15);
+    });
+  }
+}
+
+
+//////////////////////////
+// TESLONIK
+
+function Moduledesoutien(truc){
+  if($(truc.parentNode.parentNode).attr('class') == "table-secondary") {
+    $('.soin').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant + 4);
+    });
+  } else {
+    $('.soin').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant - 4);
+    });
+  }
+}
+
+
+//////////////////////////
+// BLEEN
+
+function Drapedesang(truc){
+  if($(truc.parentNode.parentNode).attr('class') == "table-secondary") {
+    $('.saign').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant + 1);
+    });
+  } else {
+    $('.saign').each(function(i, obj) {
+      avant = parseInt($(obj).text());
+      $(obj).text(avant - 1);
     });
   }
 }

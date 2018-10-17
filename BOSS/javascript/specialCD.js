@@ -333,31 +333,275 @@ function getRandomArbitrary(min, max){
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+//////////////////////
+// PlusStatus Function
+function PlusStatus(obj) {
+  tour = parseInt($(obj.parentNode).find('.status').text());
+  $(obj.parentNode).find('.status').text(tour + 1);
+
+  // IF PUISS
+  if($(obj.parentNode).find('.status').attr('id') == 'PUISS'){
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min + 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+  }
+
+  // IF INFU
+  if($(obj.parentNode).find('.status').attr('id') == 'INFU'){
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min + 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+  }
+}
+
+//////////////////////
+// MinusStatus Function
+function MinusStatus(obj) {
+  tour = parseInt($(obj.parentNode).find('.status').text());
+  if(tour == 0){
+  } else {
+    $(obj.parentNode).find('.status').text(tour - 1);
+
+  // IF PUISS
+  if($(obj.parentNode).find('.status').attr('id') == 'PUISS'){
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+  }
+
+  // IF INFU
+  if($(obj.parentNode).find('.status').attr('id') == 'INFU'){
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+    min = parseInt($(obj).text());
+    console.log(min)
+    $(obj).text(min - 1);
+    });
+    $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min - 1);
+    });
+  }
+  }
+}
+
 ///////////////////////
 // Fin du tour
 function FinDuTour() {
-  // -1 ALL DEBUFFS/BUFFS
-  $('.btn-B').each(function(i, obj) {
-    tour = $(obj).children().text();
-    if(tour == 1) {
-      $(obj.parentNode).remove();
-    } else {
-      $(obj).children().text(tour - 1)
-    }
-  })
 
-  $('.table-danger').each(function(i, obj) {
-    CD = $(obj).find('.CD').val();
-    tour = parseInt($(obj).find('.btn-CD').text());
-    if(tour == 1) {
-      $(obj).find('.btn-CD').attr('class', 'btn-CD btn btn-success btn-sm font-weight-bold');
-      $(obj).find('.btn-CD').text(CD);
-      $(obj).find('.Atq').attr('disabled', false);
-      $(obj).attr('class', '');
-    } else {
-      $(obj).find('.btn-CD').text(tour - 1);
-    }
-  })
+  if($('#BTN_TOUR').text() == "DEBUT DU TOUR"){
+
+      // EFFECT OF STATUS
+      if(parseInt($('#POISON').text()) > 0){
+        pv = parseInt($('#PV').text());
+        poison = parseInt($('#POISON').text());
+        $('#PV').text(pv - poison);
+      }
+
+      if(parseInt($('#SAIGN').text()) > 0){
+        pv = parseInt($('#PV').text());
+        ar = parseInt($('#AR').text());
+        saign = parseInt($('#SAIGN').text());
+        if(ar < saign){
+          $('#AR').text(0);
+          $('#PV').text(pv - (saign - ar));
+        } else {
+          $('#AR').text(ar - saign);
+        }
+      }
+
+      if($('#BRUL').text() > 0){
+        pv = parseInt($('#PV').text());
+        bm = parseInt($('#BM').text());
+        brul = parseInt($('#BRUL').text());
+        if(bm < brul){
+          $('#BM').text(0);
+          $('#PV').text(pv - (brul - bm));
+        } else {
+          $('#BM').text(bm - brul);
+        }
+      }
+
+    $('#BTN_TOUR').text("FIN DU TOUR");
+    $('#BTN_TOUR').attr('class', "btn btn-danger btn-block");
+
+  } else {
+
+      // IF PUISS
+      if($('#PUISS').text() > 0){
+        $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+      }
+
+      // IF INFU
+      if($('#INFU').text() > 0){
+        $('.btn.btn-primary.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-primary.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-success.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-success.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+        $('.btn.btn-primary.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+      }
+
+    // -1 ALL DEBUFFS/BUFFS
+    $('.btn-B').each(function(i, obj) {
+      tour = $(obj).children().text();
+      if(tour == 1) {
+        $(obj.parentNode).remove();
+      } else {
+        $(obj).children().text(tour - 1)
+      }
+    });
+
+    // -1 ALL STATUS
+      $('.status').each(function(i, obj) {
+        tour = parseInt($(obj).text());
+        if(tour == 0) {
+        } else {
+          $(obj).text(tour - 1);
+        }
+      });
+
+    $('.table-danger').each(function(i, obj) {
+      CD = $(obj).find('.CD').val();
+      tour = parseInt($(obj).find('.btn-CD').text());
+      if(tour == 1) {
+        $(obj).find('.btn-CD').attr('class', 'btn-CD btn btn-success btn-sm font-weight-bold');
+        $(obj).find('.btn-CD').text(CD);
+        $(obj).find('.Atq').attr('disabled', false);
+        $(obj).attr('class', '');
+      } else {
+        $(obj).find('.btn-CD').text(tour - 1);
+      }
+    });
+
+    $('#BTN_TOUR').text("DEBUT DU TOUR");
+    $('#BTN_TOUR').attr('class', "btn btn-success btn-block");
+
+  }
 }
 
 ///////////////////////
@@ -373,10 +617,8 @@ $('.table-danger').each(function(i, obj) {
 // REMOVE ALL DEBUFFS/BUFFS
 $('.btn-B').each(function(i, obj) {
   $(obj.parentNode).remove();
-})
+});
 
-// PWR 0
-$('#PWR').text(0);
 }
 
 ////////////////////////

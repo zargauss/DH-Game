@@ -83,8 +83,8 @@
                 <div class="btn-group btn-up" role="group" aria-label="">
                   <button id="PWR" type="button" class="btn btn-outline-info" onclick="ShowModalChange('PWR', 'setPWR', 'modalPWR')">0 <!-- PWR --></button>
                   <button id= "PWR-MAX" type="button" class="btn btn-info" style="font-weight:900" disabled> 100
-                    <i class="fas fa-bolt"></i></button>
                     <input id="TYPE-ENER" type="hidden" name="" value="POWER"> 
+                    <i class="fas fa-bolt"></i></button>
                 </div>
 
                 <div class="btn-group btn-up" role="group" aria-label="">
@@ -186,8 +186,9 @@
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                              <button type="button" class="btn btn-outline-danger btn-sm" disabled>Insensible à </button>
                   							             <button type="button" class="btn btn-danger btn-sm" disabled>Saignement </button>
-                                             <button type="button" class="btn btn-danger btn-sm" disabled>Poison </button>
-                                             <button type="button" class="btn btn-danger btn-sm" disabled>Brûlure </button></div></td>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Poison </button></td>
+                  <td class="align-middle text-center">
+                                          </td>
                   <td class="align-middle text-center">
                                           </td>
                </tr>
@@ -200,7 +201,7 @@
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">3</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        <div class="btn-group btn-group-sm" role="group" style="padding-top: 5px;">
@@ -214,6 +215,7 @@
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">7</b>  <i class="fas fa-bolt"></i>
                                                        </button></td>
   				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
                 <!-- LIGNES -->
@@ -225,14 +227,15 @@
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">1</b><b> - </b><b class="dmg-max">2</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">5</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
                   <td class="align-middle"></td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">15</b>  <i class="fas fa-bolt"></i>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">10</b>  <i class="fas fa-bolt"></i>
                                                        </button></td>
                   <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
               </tbody>
@@ -326,7 +329,7 @@
                                           </div>
                                           <div class="btn-group btn-group-sm" role="group" aria-label="">
                   							            <button type="button" class="btn btn-outline-danger btn-sm" disabled>Soi</button>
-                  							            <button type="button" class="btn btn-danger btn-sm" disabled>Electrocution  <span class="badge badge-light badge-pill text-danger">2</span></button>
+                  							            <button type="button" class="btn btn-danger btn-sm" disabled>Confusion  <span class="badge badge-light badge-pill text-danger">1</span></button>
                                           </div>
                                           </td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>+ </b><b class="pluspower">15</b>  <i class="fas fa-bolt"></i>
@@ -367,7 +370,7 @@
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                                          <button type="button" class="btn btn-outline-success btn-sm 1" disabled>1 AC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-success btn-sm dmg" disabled><b class="dmg-min">5</b><b> - </b><b class="dmg-max">11</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-success btn-sm dmg" disabled><b class="dmg-min soin">5</b><b> - </b><b class="dmg-max soin">11</b> <!-- DMG -->
                                                          </button>
                                                        </div></td>
                   <td class="align-middle">
@@ -388,7 +391,7 @@
                                                        </div></td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                              <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
-                                             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success">12</span></button>
+                                             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success soin">12</span></button>
                                            </div> 
                                            <button type="button" class="btn btn-success btn-sm" disabled>AR  <span class="badge badge-light badge-pill text-success">8</span></button>
                                           </td>
@@ -434,15 +437,15 @@
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-secondary">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm font-weight-bold AR-Amor" disabled>5
+                  <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm font-weight-bold AR-Amor" disabled>10
                                                        </button></td>
-                  <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm font-weight-bold BM-Armor" disabled>5
+                  <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm font-weight-bold BM-Armor" disabled>10
                                                        </button></td>
                   <td class="align-middle">Module de Soutien <!-- NOM -->
                                           </td>
                   <td class="align-middle"><button type="button" class="btn btn-outline-secondary btn-sm" disabled><i>Augmente les soins prodigués de 4</i></button>
                                           </td>
-                  <td class="text-center"><button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->
+                  <td class="text-center"><button type="button" class="Up btn btn-success btn-sm" onclick="Moduledesoutien(this)"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->
                                           </td>
                 </tr>
               </tbody>

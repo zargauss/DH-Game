@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="images/dice.png">
 
-    <title>DHGame TESLONIK</title>
+    <title>Sylvestrin</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -13,49 +13,118 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-   <!-- CSS de la feuille -->
-    <style type="text/css">
-      .btn-up {
-        padding-right: 10px;
-      }
-      .btn-list {
-        margin-bottom: 5px;
-      }
-      .btn:focus {
-        box-shadow: none;
-      }
-      .btn:active:focus {
-        box-shadow: none;
-      }
-      .btn-CD {
-        width: 32px;
-      }
-      .btn-modal-atq {
-        padding-bottom: 10px;
-      }
-      th, td {
-        padding: .4rem!important;
-      }
+    <!-- CSS Général -->
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- CSS de la feuille -->
+	  <style type="text/css">
       #img {
-        background-image: url('https://images2.alphacoders.com/595/thumb-1920-595402.jpg');
-		background-position: center;
+        background-image: url('https://i.pinimg.com/564x/98/23/aa/9823aa7796299c7fd8f43728ccb0356f.jpg');
+		    background-position: center top;
         background-repeat: no-repeat;
-        border-radius: 0.5rem;
       }
     </style>
 
   </head>
 
   <body class="bg-light">
+
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-dark border-bottom fixed-top">
+      <div class="container-fluid" style="padding-right: 0px!important">
+        <a class="navbar-brand" href="index.html"><i class="fab fa-wolf-pack-battalion"></i>  <b>Sylvestrin</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <div class="col-3 text-left">
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-danger btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-skull"></i> <b class="status" id="POISON">0 </b></button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-danger btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-tint"></i> <b class="status" id="SAIGN">0 </b></button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-danger btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-fire"></i> <b class="status" id="BRUL">0 </b></button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+
+            <!-- STATS -->
+            <div class="col-5 text-center" style="padding-left: 65px!important">
+              <div class="row justify-content-center text-center">
+                <div class="btn-group btn-up" role="group" aria-label="">
+                  <button id="PV" type="button" class="btn btn-outline-success" onclick="ShowModalChange('PV', 'setPV', 'modalPV')">32 <!-- PV --></button>
+                  <button type="button" class="btn btn-success" disabled><b id="PV-MAX-B"> 32 </b> <!-- PV MAX -->
+                    <input id="PV-MAX" type="hidden" name="" value="32"> <!-- PV MAX -->
+                      <i class="far fa-heart fa-lg"></i></button>
+                </div>
+
+                <div class="btn-group btn-up" role="group" aria-label="">
+                  <button id="AR" type="button" class="btn btn-outline-danger" onclick="ShowModalChange('AR', 'setAR', 'modalAR')">4 <!-- AR --></button>
+                  <button type="button" class="btn btn-danger" disabled><b id="AR-MAX-B"> 4 </b> <!-- AR MAX -->
+                    <input id="AR-MAX" type="hidden" name="" value="4"> <!-- AR MAX -->
+                    <i class="fas fa-shield-alt fa-lg"></i></button>
+                </div>
+
+                <div class="btn-group btn-up" role="group" aria-label="">
+                  <button id="BM" type="button" class="btn btn-outline-primary" onclick="ShowModalChange('BM', 'setBM', 'modalBM')">4 <!-- BM --></button>
+                  <button type="button" class="btn btn-primary" disabled><b id="BM-MAX-B"> 4 </b> <!-- BM MAX -->
+                    <input id="BM-MAX" type="hidden" name="" value="4"> <!-- BM MAX -->
+                    <i class="fas fa-shield-alt fa-lg"></i></button>
+                </div>
+
+                <div class="btn-group btn-up" role="group" aria-label="">
+                  <button id="INI" type="button" class="btn btn-outline-warning" onclick="ShowModalChange('INI', 'setINI', 'modalINI')">350 <!-- INI --></button>
+                  <button type="button" class="btn btn-warning text-light" disabled><i class="fas fa-exchange-alt fa-lg"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- BUFFS -->
+            <div class="col-4 text-right" style="padding-right: 0px!important">
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-success btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shield-alt" style="color: #E45888"></i> <b class="status" id="PROTEC">0 </b></button>
+                <button type="button" class="btn btn-success btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-success btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shield-alt" style="color: #7B9CFE"></i> <b class="status" id="REFLEX">0 </b></button>
+                <button type="button" class="btn btn-success btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-success btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-hand-rock"></i> <b class="status" id="PUISS">0 </b></button>
+                <button type="button" class="btn btn-success btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="btn-group btn-group-sm" role="group" aria-label="">
+                <button type="button" class="btn btn-success btn-sm" onclick="MinusStatus(this)"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i> <b class="status" id="INFU">0 </b></button>
+                <button type="button" class="btn btn-success btn-sm" onclick="PlusStatus(this)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+
     <!-- Container -->
-    <div class="row" style="margin-right: 0px!important">
-      <div class="col-3 border-right border-bottom" style="padding-right: 0px!important;">
+    <div class="row" style="margin-right: 0px!important; padding-top: 60px;">
+      <div class="col-3" style="padding-right: 0px!important;">
         <!-- NOM PERSONNAGE -->
-        <div class="text-center" style="margin-top: 50px;"><h3><b>TESLONIK</b></h3></div>
+        <div class="text-center" style="margin-top: 50px;"><h3><b>Sylvestrin</b></h3></div>
         <!-- IMAGE -->
         <div id="img" class="text-center" style="margin-left: 50px; margin-right: 50px; height: 600px;"></div>
       </div>
-      <div class="col-9 border-left border-bottom" style="padding-bottom: 10px;">
+      <div class="col-9" style="padding-bottom: 10px;">
           <!-- BUFFS & STATS -->
           <div class="row" style="margin-top: 10px;">
             <!-- DEBUFFS -->
@@ -69,37 +138,7 @@
 
             <!-- STATS -->
             <div class="col-6 text-center">
-            	<div class="row justify-content-center text-center">
-                <div class="btn-group btn-up" role="group" aria-label="">
-                  <button id="PV" type="button" class="btn btn-outline-success" onclick="ShowModalChange('PV', 'setPV', 'modalPV')">55 <!-- PV --></button>
-                  <button type="button" class="btn btn-success" disabled><b id="PV-MAX-B"> 55 </b> <!-- PV MAX -->
-                    <input id="PV-MAX" type="hidden" name="" value="55"> <!-- PV MAX -->
-                      <i class="far fa-heart fa-lg"></i></button>
-                </div>
-
-                <div class="btn-group btn-up" role="group" aria-label="">
-                  <button id="AR" type="button" class="btn btn-outline-danger" onclick="ShowModalChange('AR', 'setAR', 'modalAR')">15 <!-- AR --></button>
-                  <button type="button" class="btn btn-danger" disabled><b id="AR-MAX-B"> 25 </b> <!-- AR MAX -->
-                    <input id="AR-MAX" type="hidden" name="" value="25"> <!-- AR MAX -->
-                    <i class="fas fa-shield-alt fa-lg"></i></button>
-                </div>
-
-                <div class="btn-group btn-up" role="group" aria-label="">
-                  <button id="BM" type="button" class="btn btn-outline-primary" onclick="ShowModalChange('BM', 'setBM', 'modalBM')">15 <!-- BM --></button>
-                  <button type="button" class="btn btn-primary" disabled><b id="BM-MAX-B"> 25 </b> <!-- BM MAX -->
-                    <input id="BM-MAX" type="hidden" name="" value="25"> <!-- BM MAX -->
-                    <i class="fas fa-shield-alt fa-lg"></i></button>
-                </div>
-
-                <div class="btn-group btn-up" role="group" aria-label="">
-                  <button id="INI" type="button" class="btn btn-outline-warning" onclick="ShowModalChange('INI', 'setINI', 'modalINI')">300 <!-- INI --></button>
-                  <button type="button" class="btn btn-warning" disabled><i class="fas fa-exchange-alt fa-lg"></i></button>
-                </div>
-				
-				<div class="btn-group btn-up" role="group" aria-label="">
-                  <button id="INI" type="button" class="btn btn-secondary"><b>3</b> <!-- COST --></button>
-                </div>
-              </div>
+            	
             </div>
 
             <!-- BUFFS -->
@@ -112,10 +151,38 @@
             </div>
           </div>
 
+          <!-- PASSIF -->
+          <div style="padding-top: 10px;">
+            <div class="row" style="padding-left: 15px;">
+              <h4>Passif</h4>
+            </div>
+            <table class="table table-bordered table-sm">
+              <!-- NOMS COLONNES -->
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" style="width: 31%">Nom</th>
+                  <th scope="col">Effet de l'attaque</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--PASSIF  -->
+                <tr class="table-actif">
+                  <td class="align-middle">Photsynthèse <!-- NOM -->
+                                          </td>
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Début du tour</button>
+                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Soi</button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Infusion  <span class="badge badge-light badge-pill text-danger">t</span></button>
+                                            </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <!-- ATTAQUES DE BASE -->
           <div style="padding-top: 10px;">
             <div class="row" style="padding-left: 15px;">
-              <h4>Attaques de base</h4>
+              <h4>Attaque de base</h4>
             </div>
             <table class="table table-bordered table-sm">
               <!-- NOMS COLONNES -->
@@ -125,33 +192,30 @@
                   <th scope="col" style="width: 15%">Nom</th>
                   <th scope="col" style="width: 8%">Dégats</th>
                   <th scope="col" style="width: 51%">Effet de l'attaque</th>
+                  <th scope="col" style="width: 8%"></th>
                   <th scope="col" style="width: 8%">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- LIGNES -->
+                
+	              <!-- LIGNES -->
                 <tr class="table-actif">
                   <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
                                                        </td>
-                  <td class="align-middle">Poing Éclair <!-- NOM -->
+                  <td class="align-middle">Racines maudites <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
-                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
-                                                         </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
-                                                         </b></button>
-                                                       </div>
-                                                       <div class="btn-group btn-group-sm" role="group" style="padding-top: 10px;">
-                                                         <button type="button" class="btn btn-outline-primary btn-sm 2" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">1</b><b> - </b><b class="dmg-max">2</b> <!-- DMG -->
                                                          </b></button>
-                                                       </div>
-                                                       </td>
-                  <td class="align-middle"></td> <!-- DESCRIPTION --> 
-				  
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
-                      					        
+                                                       </div></td>
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone</button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Poison  <span class="badge badge-light badge-pill text-danger">+ 1</span></button>
+                                            </div></td>
+                  <td class="align-middle text-center"></td>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
                                           </td>
                 </tr>
               </tbody>
@@ -170,109 +234,91 @@
               </div>
             </div>
             <table id="CompTab" class="table table-bordered table-sm">
-              <!-- NOMS COLONNES -->
+              <!-- NOMS COLONNES --> 	
               <thead class="thead-light">
                 <tr>
                   <th scope="col" style="width: 8%">Type</th>
                   <th scope="col" style="width: 15%">Nom</th>
                   <th scope="col" style="width: 8%">Dégats</th>
                   <th scope="col" style="width: 51%">Effet de la compétence</th>
-                  <th scope="col" style="width: 6%">CD</th>
-                  <th scope="col" style="width: 6%">Action</th>
+                  <th scope="col" style="width: 8%">CD</th>
+                  <th scope="col" style="width: 8%">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Charge <!-- NOM -->
+                  <td class="align-middle">Effusions toxiques <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 E <!-- Zone / 1 E / Etc ... -->
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">5</b><b> - </b><b class="dmg-max">6</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">3</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
-                  <td class="align-middle">Ignore l'esquive
-                                           <div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Soi</button>
-                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Provocation  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div>
-                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
-                                        <input type="hidden" class="CD" value=4> <!-- CD --></td>
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone</button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Poison  <span class="badge badge-light badge-pill text-danger">+ 1</span></button>
+                                           </div></td>
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>3</button>
+                                        <input type="hidden" class="CD" value=3> </td>
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
+                      					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
                 <!-- LIGNE -->
                 <tr class="table-actif">
                   <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Frappe de choc <!-- NOM -->
+                  <td class="align-middle">Camisole de ronces <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->
+                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">3</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">8</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                    						             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone</button>
-                    						             <button type="button" class="btn btn-danger btn-sm" disabled>Ralentissement  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div>
-                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
-                                        <input type="hidden" class="CD" value=4> </td>                         
-                  <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
+                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Gel mental  <span class="badge badge-light badge-pill text-danger">3</span></button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Poison  <span class="badge badge-light badge-pill text-danger">+ 3</span></button>
+                                           </div></td>
+                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>4</button>
+                                        <input type="hidden" class="CD" value=4> </td>
+                  <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
+                                          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
-                <!-- LIGNE -->
-                <tr class="table-secondary"> 
-                  <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
-                  </button></td>
-                  <td class="align-middle">Surcharge <!-- NOM -->
-                                          </td>
-                  <td class="align-middle text-center"><div class="font-weight-bold text-center text-danger"> <!-- DMG -->
-                                                       </div></td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                            <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
-                                            <button type="button" class="btn btn-success btn-sm" disabled>Puissance  <span class="badge badge-light badge-pill text-success">3</span></button>
-                                          </div>
-                                          <div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							            <button type="button" class="btn btn-outline-danger btn-sm" disabled>Soi</button>
-                  							            <button type="button" class="btn btn-danger btn-sm" disabled>Electrocution  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                          </div>
-                                          </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm" disabled><i class="fas fa-check"></i></button>
-                                        <input type="hidden" class="CD" value=4> </td>                        
-                  <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)" disabled><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
-                                          </td>
-                </tr>
-
               </tbody>
             </table>
           </div>
-
-          <!-- FIN DU TOUR | ROLL BUTTON | FIN DU NIVEAU -->
-          <div class="row justify-content-md-center" style="margin-top: 30px; padding-bottom: 15px;">
-          	<div class="col-lg-3">
-          		<button type="button" class="btn btn-outline-success btn-block" onclick="FinDuTour()" style="border-radius: 3rem;"><i class="fas fa-hourglass-end"></i>   Fin du tour</button>
-          	</div>
-            <div class="col-md-auto text-center">
-              <button type="button" class="btn btn-info" onclick="ShowModalRoll()" style="border-radius: 3rem;"><i class="fas fa-dce"></i></button>
-            </div>
-            <div class="col-md-auto text-center">
-              <button type="button" class="btn btn-danger" onclick="randomDebuff()" style="border-radius: 3rem;"><i class="fas fa-dce"></i></button>
-            </div>
-          	<div class="col-lg-3">
-          		<button type="button" class="btn btn-outline-success btn-block" onclick="FinDuCombat()" style="border-radius: 3rem;"><i class="fas fa-door-closed"></i>   Fin du combat</button>
-          	</div>
-          </div>
         </div>
       </div>
+
+      <!-- FOOTER -->
+      <footer class="fixed-bottom bg-light border-dark border-top">
+        <!-- FIN DU TOUR | ROLL BUTTON | FIN DU NIVEAU -->
+        <div class="container">
+          <div class="row justify-content-md-center" style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="col-lg-2">
+              <button id="BTN_TOUR" type="button" class="btn btn-success btn-block" onclick="FinDuTour()">DEBUT DU TOUR</button>
+            </div>
+            <div class="col-md-auto text-center">
+              <button type="button" class="btn btn-warning text-light" onclick="ShowModalRoll()"><i class="fas fa-dice-six fa-spin"></i></button>
+              <button type="button" class="btn btn-success" onclick="randomBuff()"><i class="far fa-question-circle fa-spin"></i></button>
+              <button type="button" class="btn btn-danger" onclick="randomDebuff()"><i class="far fa-question-circle fa-spin"></i></button>
+            </div>
+            <div class="col-lg-2">
+              <button type="button" class="btn btn-outline-success btn-block" onclick="FinDuCombat()"><i class="fas fa-door-closed"></i></button>   
+            </div>
+          </div>
+        </div>
+      </footer>
+
       <!-- Modals -->
       <!-- Roll Modal -->
       <div class="modal fade" id="modalRoll">
@@ -296,9 +342,8 @@
                 <h2 class="text-center" id="Roll"></h2>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-warning" id="RollModal" onclick="Roll()"><i class="fas fa-dice"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-warning text-light btn-block" id="RollModal" onclick="Roll()"><i class="fas fa-dice-six fa-spin"></i></button>
             </div>       
           </div>
         </div>
@@ -314,7 +359,7 @@
             </div>        
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
+               <button type="button" class="btn btn-danger btn-block" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
             </div>       
           </div>
         </div>
@@ -333,7 +378,7 @@
             </div>        
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
+               <button type="button" class="btn btn-warning btn-block" data-dismiss="modal"><i class="fas fa-crosshairs"></i></button>
             </div>       
           </div>
         </div>
@@ -356,9 +401,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-success" onclick="SetChange('PV', 'setPV', 'modalPV')"><i class="far fa-heart fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">        
+               <button type="submit" class="btn btn-success btn-block" onclick="SetChange('PV', 'setPV', 'modalPV')"><i class="far fa-heart fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -381,9 +425,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-danger" onclick="SetChange('AR', 'setAR', 'modalAR')"><i class="fas fa-shield-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">        
+               <button type="submit" class="btn btn-danger btn-block" onclick="SetChange('AR', 'setAR', 'modalAR')"><i class="fas fa-shield-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -406,9 +449,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-primary" onclick="SetChange('BM', 'setBM', 'modalBM')"><i class="fas fa-shield-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">      
+               <button type="submit" class="btn btn-primary btn-block" onclick="SetChange('BM', 'setBM', 'modalBM')"><i class="fas fa-shield-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
@@ -431,9 +473,8 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-info" onclick="SetChange('PWR', 'setPWR', 'modalPWR')"><i class="fas fa-bolt"></i></button>
+            <div class="modal-footer justify-content-center">       
+               <button type="submit" class="btn btn-info btn-block" onclick="SetChange('PWR', 'setPWR', 'modalPWR')"><i class="fas fa-bolt"></i></button>
             </div>       
           </div>
         </div>
@@ -456,15 +497,14 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-warning" onclick="SetChange('INI', 'setINI', 'modalINI')"><i class="fas fa-exchange-alt fa-lg"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-warning btn-block text-light" onclick="SetChange('INI', 'setINI', 'modalINI')"><i class="fas fa-exchange-alt fa-lg"></i></button>
             </div>       
           </div>
         </div>
       </div>
 
-      <!-- INI Modal -->
+      <!-- Random Debuffs -->
       <div class="modal fade" id="modalrandomdebuff">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">             
@@ -474,7 +514,21 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+            </div>       
+          </div>
+        </div>
+      </div>
+
+      <!-- Random Buffs -->
+      <div class="modal fade" id="modalrandombuff">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">             
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+              <button type="button" class="btn btn-success" disabled><b id="randombuff"></b>  <span class="badge badge-light badge-pill text-success">?</span></button>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center">
             </div>       
           </div>
         </div>
@@ -490,34 +544,27 @@
                 <form>
                   <div class="input-group mb-3">
                     <select id="selectDebuff" class="form-control border-danger text-danger">
-                      <option>Affaibli</option> 
-                      <option>Aveuglement</option> 
-                      <option>Brise armure</option>
-                      <option>Brûlure</option> 
+                      <option>Affaibli</option>
                       <option>Confusion</option> 
-                      <option>Electrocution</option> 
-                      <option>Empoisonnement</option> 
                       <option>Étourdissement</option> 
                       <option>Faiblesse</option> 
                       <option>Gel mental</option>
                       <option>Lien de vie</option>
                       <option>Peur</option> 
                       <option>Potentialisation</option> 
-                      <option>Ralentissement</option> 
-                      <option>Saignement</option> 
+                      <option>Ralentissement</option>
                       <option>Silence</option> 
                       <option>Suppression</option> 
                       <option>Vulnérable</option>
-                      <option>Provocation</option>					  
+                      <option>Provocation</option>            
                     </select>
                     <input id="setTourD" type="number" class="form-control text-center border-danger text-danger" value="1">
                  </div>
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-danger" onclick="AddDeBuff()"><i class="fas fa-plus"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-danger btn-block" onclick="AddDeBuff()"><i class="fas fa-plus"></i></button>
             </div>       
           </div>
         </div>
@@ -538,14 +585,12 @@
                       <option>Esquive</option> 
                       <option>Furtivité</option> 
                       <option>Immunité</option> 
-                      <option>Infusion</option> 
-                      <option>Protection</option> 
-                      <option>Puissance</option> 
+                      <option>Infusion</option>
                       <option>Réflexion</option> 
                       <option>Restauration</option> 
                       <option>Retour</option>
                       <option>Sacrifice</option>
-                      <option>Accélération</option> 					  
+                      <option>Accélération</option>             
                       <option>Solide</option> 
                     </select>
                     <input id="setTourB" type="number" class="form-control text-center border-success text-success" value="1">
@@ -553,19 +598,12 @@
                 </form>
             </div>        
             <!-- Modal footer -->
-            <div class="modal-footer justify-content-center">
-               <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>         
-               <button type="submit" class="btn btn-success" onclick="AddBuff()"><i class="fas fa-plus"></i></button>
+            <div class="modal-footer justify-content-center">         
+               <button type="submit" class="btn btn-success btn-block" onclick="AddBuff()"><i class="fas fa-plus"></i></button>
             </div>       
           </div>
         </div>
       </div>
-
-      <!-- FOOTER -->
-      <footer class="pt-5 text-muted text-center text-small bg-white" style="padding-bottom: 15px;">
-        <p class="mb-1">&copy; DHGame - 2018</p>
-      </footer> 
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
