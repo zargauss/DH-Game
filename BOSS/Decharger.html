@@ -19,7 +19,7 @@
     <!-- CSS de la feuille -->
     <style type="text/css">
       #img {
-        background-image: url('https://i.pinimg.com/564x/51/8c/05/518c053cbe8c0fa94555ae83dbc4f65d.jpg');
+        background-image: url('https://i.pinimg.com/564x/4e/64/5c/4e645c611fe768b648cea3670841de3b.jpg');
 		    background-position: center;
         background-repeat: no-repeat;
         border-radius: 0.5rem;
@@ -99,23 +99,21 @@
               <!-- NOMS COLONNES -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" style="width: 8%">Type</th>
+                  <th scope="col" style="width: 8%">Nom</th>
                   <th scope="col" style="width: 60%">Effet du passif</th>
-                  <th scope="col" style="width: 8%">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Passif</button>
+                  <td class="align-middle text-center">Armure phasée
                                                        </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                                          <button type="button" class="btn btn-outline-danger btn-sm" disabled>A chaque fois qu'un monstre inflige des dégâts physiques, il applique </button>
-                                          <button type="button" class="btn btn-danger btn-sm" disabled>Electrocution  <span class="badge badge-light badge-pill text-danger">1</span></button>
+                                          <button type="button" class="btn btn-outline-danger btn-sm" disabled>Quand un héros lance une technique </button>
+                                          <button type="button" class="btn btn-danger btn-sm" disabled>Brûlure  <span class="badge badge-light badge-pill text-danger">+1</span></button>
                                            </div>
 				                    </td> <!-- DESCRIPTION --> 
-  				        <td class="align-middle text-center"> <!-- ATQ BUTTON & UP/DOWN BUTTON -->			        
-                                          </td>
+
                 </tr>
               </tbody>
             </table>
@@ -130,7 +128,6 @@
               <!-- NOMS COLONNES -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" style="width: 8%">Type</th>
                   <th scope="col" style="width: 15%">Nom</th>
                   <th scope="col" style="width: 8%">Dégats</th>
                   <th scope="col" style="width: 51%">Effet de l'attaque</th>
@@ -140,27 +137,52 @@
               <tbody>
                 <!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
-                                                       </td>
                   <td class="align-middle">Coup chargé <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">5</b> <!-- DMG -->
                                                          </b></button>
-                                                       </div>
+                                                       </div>	
                                                      
                                                        </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
-                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Electrocution  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div></td> <!-- DESCRIPTION --> 
+                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Ignore l'armure</button></div>
+														 <div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-outline-warning btn-sm" disabled>Crit</button>
+                                             <button type="button" class="CritValue btn btn-warning btn-sm text-light" onclick="Crit(this)"><b>40</b></button>
+                                           </div>
+                                           </td> <!-- DESCRIPTION --> 
 				  
   				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					        
                                           </td>
                 </tr>
+				
+				
+				  <!-- LIGNE CRITIQUE -->	
+                <tr class="table-crit table-warning" style="display: none;"> 
+
+                  <td class="align-middle">Coup précis <!-- NOM -->
+                                          </td>
+                  <td class="align-middle text-center"<div class="btn-group btn-group-sm" role="group">
+                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">8</b> <!-- DMG -->
+                                                         </b></button>
+                                                       </div>	</td>
+													           
+                  <td colspan="3" class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                
+										    <button type="button" class="btn btn-outline-danger btn-sm" disabled>Ignore l'armure</button>
+											<button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Saignement <span class="badge badge-light badge-pill text-danger">+2</span></button>
+                                           </div>
+										    
+                                           </td>
+                </tr>
+				
               </tbody>
             </table>
           </div>
@@ -278,76 +300,21 @@
               <tbody>
                 <!-- LIGNE -->
                 <tr class="table-actif">
-                  <td class="text-center align-middle"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center align-middle"><button type="button" class="btn btn-secondary btn-sm" disabled>Passif <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Pylône de Silence <!-- NOM -->
+                  <td class="align-middle">Evocation <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
-                                                         </button> 
-                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
-                                                         </b></button>
-                                                       </div>
+                  <td class="align-middle text-center"> 
                                                        </td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                    						             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC </button>
-                    						             <button type="button" class="btn btn-danger btn-sm" disabled>Silence  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div>
+                  <td class="align-middle">Vous invoquez un <b> Pilône surchargé </b>, un <b> Pilône affaiblissant </b> et un <b> Pilône instable</b>. Pendant cette 
+														phase le Decharger ne peut pas attaquer et ne peut pas être attaqué. Lorsque les 3 Pilônes sont détruits, le Decharger passe en phase III. 
                                            
                                            </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>1</button>
-                                        <input type="hidden" class="CD" value=1> <!-- CD --></td>
-                  <td class="text-center align-middle"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
+                  <td class="align-middle text-center"></td>
+                  <td class="text-center align-middle"> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
                                           </td>
                 </tr>
-                <!-- LIGNE -->
-                <tr class="table-actif">
-                  <td class="text-center align-middle"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
-                                          </button></td>
-                  <td class="align-middle">Pylône de Faiblesse <!-- NOM -->
-                                          </td>
-                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
-                                                         </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
-                                                         </b></button>
-                                                       </div>
-                                                       </td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC </button>
-                                             <button type="button" class="btn btn-danger btn-sm" disabled>Faiblesse  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div>
-                                           
-                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>1</button>
-                                        <input type="hidden" class="CD" value=1> <!-- CD --></td>
-                  <td class="text-center align-middle"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
-                                          </td>
-                </tr>
-                <!-- LIGNE -->
-                <tr class="table-actif">
-                  <td class="text-center align-middle"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
-                                          </button></td>
-                  <td class="align-middle">Pylône instable <!-- NOM -->
-                                          </td>
-                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
-                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->
-                                                         </button> 
-                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
-                                                         </b></button>
-                                                       </div>
-                                                       </td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone </button>
-                                             <button type="button" class="btn btn-danger btn-sm" disabled>Electrocution  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div>
-                                           
-                                           </td>
-                  <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>1</button>
-                                        <input type="hidden" class="CD" value=1> <!-- CD --></td>
-                  <td class="text-center align-middle"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON | onclick="RollCompAtt(this)" si DMG -->
-                                          </td>
-                </tr>
+             
               </tbody>
             </table>
           </div>
@@ -382,11 +349,11 @@
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EA <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">7</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">8</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
-                  <td class="align-middle"> <button type="button" class="btn btn-outline-dark btn-sm" disabled><i>Au début de chaque tours.</i></button> 
+                  <td class="align-middle"> <button type="button" class="btn btn-outline-dark btn-sm" disabled>Début du tour</button> 
                                            </td>
                   <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>1</button>
                                         <input type="hidden" class="CD" value=1> <!-- CD --></td>
@@ -397,12 +364,12 @@
                 <tr class="table-actif">
                   <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Coup brutal <!-- NOM -->
+                  <td class="align-middle">Coup fracassant <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
                                                          </button> 
-                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">7</b> <!-- DMG -->
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">4</b><b> - </b><b class="dmg-max">8</b> <!-- DMG -->
                                                          </b></button>
                                                        </div>
                                                        </td>
@@ -410,12 +377,39 @@
                     						             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
                     						             <button type="button" class="btn btn-danger btn-sm" disabled>Etourdissement  <span class="badge badge-light badge-pill text-danger">1</span></button>
                                            </div>
-                                           </td>
+										<div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-outline-warning btn-sm" disabled>Crit</button>
+                                             <button type="button" class="CritValue btn btn-warning btn-sm text-light" onclick="Crit(this)"><b>40</b></button>
+                                           </div>
                   <td class="align-middle text-center"><button type="button" class="btn-CD btn btn-success btn-sm font-weight-bold" disabled>3</button>
                                         <input type="hidden" class="CD" value=3> </td>                         
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                                           </td>
                 </tr>
+				
+					<!-- LIGNE CRITIQUE -->	
+                <tr class="table-crit table-warning" style="display: none;"> 
+                  <td class="text-center"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
+                                          </button></td>
+                  <td class="align-middle">Traumatisme <!-- NOM -->
+                                          </td>
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                                         <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">9</b><b> - </b><b class="dmg-max">12</b> <!-- DMG -->
+                                                         </b></button>
+                                                       </div></td>
+													           
+                  <td colspan="3" class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                    						             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
+                    						             <button type="button" class="btn btn-danger btn-sm" disabled>Etourdissement  <span class="badge badge-light badge-pill text-danger">1</span></button>
+														 <button type="button" class="btn btn-danger btn-sm" disabled>Saignement <span class="badge badge-light badge-pill text-danger">3</span></button>
+                                           </div>
+
+                                           </td>
+                </tr>
+				
+				
 				 <!-- LIGNE -->
                 <tr class="table-actif">
                   <td class="text-center align-middle"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
@@ -427,11 +421,11 @@
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                     						             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
           														       <button type="button" class="btn btn-success btn-sm" disabled>Épine <span class="badge badge-light badge-pill text-success">4</span></button>
-          															     <button type="button" class="btn btn-success btn-sm" disabled>Retour <span class="badge badge-light badge-pill text-success">4</span></button>
+          															     <button type="button" class="btn btn-success btn-sm" disabled>Réflexion <span class="badge badge-light badge-pill text-success">4</span></button>
                                            </div>
                                            <div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                                              <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone</button>
-                                             <button type="button" class="btn btn-danger btn-sm" disabled>Électrocution <span class="badge badge-light badge-pill text-danger">3</span></button>
+                                             <button type="button" class="btn btn-danger btn-sm" disabled>Vulnérable <span class="badge badge-light badge-pill text-danger">3</span></button>
                                            </div>
 										   
                                            </td>
