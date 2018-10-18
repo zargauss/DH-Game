@@ -157,17 +157,47 @@
               </div>
             </div>
           </div>
-
-          <!-- ATTAQUES DE BASE -->
-          <div style="padding-top: 10px;">
+		  
+		  
+          <!-- PASSIF -->		  
+		   <div style="padding-top: 10px;">
             <div class="row" style="padding-left: 15px;">
-              <h4>Passif & armes</h4>
+              <h4>Passif</h4>
             </div>
             <table class="table table-bordered table-sm">
               <!-- NOMS COLONNES -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" style="width: 8%">Type</th>
+                  <th scope="col" style="width: 15%">Nom</th>
+                  <th scope="col" style="width: 51%">Effet</th>
+                </tr>
+              </thead>
+			  <tbody>
+                <!--PASSIF  -->
+				
+                <tr class="table-actif">
+         
+                  <td class="align-middle">Détection <!-- NOM -->
+                                          </td>
+
+                  <td class="align-middle"> <div class="btn-group btn-group-sm" role="group" aria-label="">
+				  <button type="button" class="btn btn-outline-danger btn-sm" disabled>Début de combat</button>
+                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone</button>
+                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Vulnérable  <span class="badge badge-light badge-pill text-danger">2</span></button>
+                                           </div></td>
+</tbody>
+</table>
+										  
+
+          <!-- ATTAQUES DE BASE -->
+          <div style="padding-top: 10px;">
+            <div class="row" style="padding-left: 15px;">
+              <h4>Armes</h4>
+            </div>
+            <table class="table table-bordered table-sm">
+              <!-- NOMS COLONNES -->
+              <thead class="thead-light">
+                <tr>
                   <th scope="col" style="width: 15%">Nom</th>
                   <th scope="col" style="width: 8%">Dégats</th>
                   <th scope="col" style="width: 51%">Effet de l'attaque</th>
@@ -176,28 +206,9 @@
                 </tr>
               </thead>
               <tbody>
-                <!--PASSIF  -->
-				
-                <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Passif</button>
-                                                       </td>
-                  <td class="align-middle">Détection <!-- NOM -->
-                                          </td>
-                  <td class="align-middle text-center">
-                                                       
-                                                       </td>
-                  <td class="align-middle"> <div class="btn-group btn-group-sm" role="group" aria-label="">
-				  <button type="button" class="btn btn-outline-danger btn-sm" disabled>Début de combat</button>
-                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>Zone</button>
-                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Vulnérable  <span class="badge badge-light badge-pill text-danger">2</span></button>
-                                           </div></td>
-                  <td class="align-middle text-center">
-                                          </td>
-										  <td></td>
 	<!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
-                                                       </td>
+
                   <td class="align-middle">Lance du traqueur <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
@@ -211,13 +222,13 @@
                   <td class="align-middle"></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>+ </b><b class="pluspower">8</b>  <i class="fas fa-fire"></i>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				           <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
 				<!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
-                                                       </td>
+
                   <td class="align-middle">Griffe acérée <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
@@ -234,7 +245,8 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>+ </b><b class="pluspower">8</b>  <i class="fas fa-fire"></i>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				          <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
               </tbody>
@@ -477,6 +489,22 @@
                                              <button type="button" class="btn btn-outline-success btn-sm" disabled><i>A chaque ennemi tué</i></button>
                   							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
                   							             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success">+6</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                          </td> <!-- DESCRIPTION -->
+                                          </td>
+                  <td class="text-center"><button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->
+                                          </td>
+                </tr>
+				  <!-- LIGNE -->
+                <tr class="table-secondary">
+                  <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm font-weight-bold AR-Amor" disabled>4
+                                                       </button></td>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm font-weight-bold BM-Armor" disabled>4
+                                                       </button></td>
+                  <td class="align-middle">Tenue de combat <!-- NOM -->
+                                          </td>
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
+                  							             <button type="button" class="btn btn-success btn-sm" disabled>Augmente vos dégats physiques de 1</button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                                           </td> <!-- DESCRIPTION -->
                                           </td>
                   <td class="text-center"><button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->

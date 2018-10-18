@@ -158,16 +158,41 @@
             </div>
           </div>
 
-          <!-- ATTAQUES DE BASE -->
-          <div style="padding-top: 10px;">
+          <!-- PASSIF -->		  
+		   <div style="padding-top: 10px;">
             <div class="row" style="padding-left: 15px;">
-              <h4>Passif & armes</h4>
+              <h4>Passif</h4>
             </div>
             <table class="table table-bordered table-sm">
               <!-- NOMS COLONNES -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" style="width: 8%">Type</th>
+                  <th scope="col" style="width: 15%">Nom</th>
+                  <th scope="col" style="width: 51%">Effet</th>
+                </tr>
+              </thead>
+			  <tbody>
+			     <!--DESCRIPTION PASSIF  -->
+				
+                <tr class="table-actif">
+ 
+                  <td class="align-middle">Illusion <!-- NOM -->
+                                          </td>
+
+                  <td class="align-middle">Au début de votre tour, vous pouvez choisir un debuff à ne pas appliquer. 
+</tr>
+</tbody>
+</table>
+			  
+          <!-- ATTAQUES DE BASE -->
+          <div style="padding-top: 10px;">
+            <div class="row" style="padding-left: 15px;">
+              <h4>Armes</h4>
+            </div>
+            <table class="table table-bordered table-sm">
+              <!-- NOMS COLONNES -->
+              <thead class="thead-light">
+                <tr>
                   <th scope="col" style="width: 15%">Nom</th>
                   <th scope="col" style="width: 8%">Dégats</th>
                   <th scope="col" style="width: 51%">Effet de l'attaque</th>
@@ -176,23 +201,10 @@
                 </tr>
               </thead>
               <tbody>
-                <!--PASSIF  -->
-				
-                <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Passif</button>
-                                                       </td>
-                  <td class="align-middle">Illusion <!-- NOM -->
-                                          </td>
-                  <td class="align-middle text-center">
-                                                       
-                                                       </td>
-                  <td class="align-middle">Au début de votre tour, vous pouvez choisir un debuff à ne pas appliquer. 
-                  <td class="align-middle text-center">
-                                          </td>
+             
 	              <!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
-                                                       </td>
+
                   <td class="align-middle">Bâton du vide <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
@@ -209,7 +221,31 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" hidden disabled><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>.
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+                                          </td>
+                </tr>
+				   <!-- LIGNES -->
+                <tr class="table-actif">
+
+                  <td class="align-middle">Entaille du vide <!-- NOM -->
+                                          </td>
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
+                                                         <button type="button" class="btn btn-danger-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-danger btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">4</b> <!-- DMG -->
+                                                         </b></button>
+                                                       </div>
+                                                     
+                                                       </td>
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
+                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Faiblesse  <span class="badge badge-light badge-pill text-danger">2</span></button>
+                                           </div></td>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" hidden disabled><b>- </b><b class="moinspower">0</b>
+                                                       </button></td>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
               </tbody>
