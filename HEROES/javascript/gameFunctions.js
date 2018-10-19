@@ -816,19 +816,6 @@ function Armuredutrapeur(truc){
 //////////////////////////
 // TESLONIK
 
-function Moduledesoutien(truc){
-  if($(truc.parentNode.parentNode).attr('class') == "table-secondary") {
-    $('.soin').each(function(i, obj) {
-      avant = parseInt($(obj).text());
-      $(obj).text(avant + 4);
-    });
-  } else {
-    $('.soin').each(function(i, obj) {
-      avant = parseInt($(obj).text());
-      $(obj).text(avant - 4);
-    });
-  }
-}
 
 
 //////////////////////////
@@ -845,5 +832,27 @@ function Drapedesang(truc){
       avant = parseInt($(obj).text());
       $(obj).text(avant - 1);
     });
+  }
+}
+
+//////////////////////////
+// TSURY
+function plusManaTsury(){
+  mana = getRandomArbitrary(5, 12);
+  if(parseInt($('#PWR').text()) + mana > parseInt($('#PWR-MAX').text())) {
+    $('#PWR').text($('#PWR-MAX').text());
+  } else {
+    $('#PWR').text(parseInt($('#PWR').text()) + mana);
+  }
+}
+
+//////////////////////////
+// DINAER
+function plusManaDinaer(){
+  mana = getRandomArbitrary(7, 17);
+  if(parseInt($('#PWR').text()) + mana > parseInt($('#PWR-MAX').text())) {
+    $('#PWR').text($('#PWR-MAX').text());
+  } else {
+    $('#PWR').text(parseInt($('#PWR').text()) + mana);
   }
 }
