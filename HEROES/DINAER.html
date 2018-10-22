@@ -226,14 +226,14 @@
                                           </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>+ </b><b class="pluspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
                                                        <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
 										  
                 </tr>
 				     <tr class="table-actif">
 
-                  <td class="align-middle">Décharge mentale <!-- NOM -->
+                  <td class="align-middle">Lien arcanique <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -248,7 +248,7 @@
                                           </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>+ </b><b class="pluspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
                                                        <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
@@ -313,9 +313,9 @@
 				
 				   <!-- LIGNE -->
            <tr class="table-crit table-warning" style="display: none;"> 
-                  <td class="text-center align-middle"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->
+                  <td class="text-center align-middle"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Ricochet critique <!-- NOM -->
+                  <td class="align-middle">Rebondissement <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -394,12 +394,16 @@
                                           </button></td>
                   <td class="align-middle">Voile arcanique <!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">2</b><b> - </b><b class="dmg-max">3</b> <!-- DMG -->
+                                                         </button>
+                                                       </div></td>
                   <td class="align-middle">
                   						             <div class="btn-group btn-group-sm" role="group" aria-label="">
                   							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Zone</button>
-                  							             <button type="button" class="btn btn-success btn-sm" disabled>Absorption  <span class="badge badge-light badge-pill text-success">2</span></button>
-                                             <button type="button" class="btn btn-success btn-sm" disabled>Réflexion  <span class="badge badge-light badge-pill text-success">2</span></button>
+                                             <button type="button" class="btn btn-success btn-sm" disabled>Réflexion  <span class="badge badge-light badge-pill text-success">3</span></button>
                                            </div>
                                            </td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">35</b>  <i class="fas fa-flask"></i>
@@ -412,7 +416,7 @@
                 <tr class="table-actif">
                   <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Déchirure X <!-- NOM -->
+                  <td class="align-middle">Déchirure <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -486,7 +490,26 @@
                                           </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
                                              <button type="button" class="btn btn-outline-info btn-sm" disabled>Fin de tour</button>
-                                             <button type="button" class="btn btn-info btn-sm" onclick="plusManaDinaer()">Mana  <span class="badge badge-light badge-pill text-info">7 - 17</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-info btn-sm" onclick="plusManaDinaer()">Mana  <span class="badge badge-light badge-pill text-info">5 - 20</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                          </div>
+                                          </td>
+                  <td class="text-center"><button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->
+                                          </td>
+                </tr>
+				
+				                <!-- LIGNE -->
+                <tr class="table-secondary">
+                  <td class="align-middle text-center"><button type="button" class="btn btn-danger btn-sm font-weight-bold AR-Amor" disabled>5
+                                                       </button></td>
+                  <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm font-weight-bold BM-Armor" disabled>5
+                                                       </button></td>
+                  <td class="align-middle">Cape de lien <!-- NOM -->
+                                          </td>
+                  <td class="align-middle">
+				  <div> Au début de votre tour, vous pouvez choisir de transférer un statut à l'un de vos alliés. </div>
+				  <div class="btn-group btn-group-sm" role="group" aria-label="">
+                                             <button type="button" class="btn btn-outline-info btn-sm" disabled>Fin de tour</button>
+                                             <button type="button" class="btn btn-info btn-sm" onclick="plusManaDinaer()">Mana  <span class="badge badge-light badge-pill text-info">3 - 14</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
                                           </div>
                                           </td>
                   <td class="text-center"><button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button> <!-- UP/DOWN BUTTON -->

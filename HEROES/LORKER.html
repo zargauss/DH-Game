@@ -157,34 +157,30 @@
               </div>
             </div>
           </div>
-
-          <!-- ATTAQUES DE BASE -->
-          <div style="padding-top: 10px;">
+		     <!-- PASSIF -->		  
+		   <div style="padding-top: 10px;">
             <div class="row" style="padding-left: 15px;">
-              <h4>Passif & armes</h4>
+              <h4>Passif</h4>
             </div>
             <table class="table table-bordered table-sm">
               <!-- NOMS COLONNES -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" style="width: 8%">Type</th>
                   <th scope="col" style="width: 15%">Nom</th>
-                  <th scope="col" style="width: 8%">Dégats</th>
-                  <th scope="col" style="width: 51%">Effet de l'attaque</th>
-                  <th scope="col" style="width: 8%">Energy</th>
-                  <th scope="col" style="width: 8%">Action</th>
+                  <th scope="col" style="width: 51%">Effet</th>
                 </tr>
               </thead>
+			  
               <tbody>
-                <!--PASSIF  -->
+				<!-- DESCRIPTION PASSIF --> 
+				 <!--PASSIF  -->
 				
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Passif</button>
-                                                       </td>
-                  <td class="align-middle">Mutation <!-- NOM -->
+
+                  <td class="align-middle">Mutation<!-- NOM -->
                                           </td>
-                  <td class="align-middle text-center"></td>
-                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+
+                  <td class="align-middle"> <div class="btn-group btn-group-sm" role="group" aria-label="">
 				                                     <button type="button" class="btn btn-outline-success btn-sm" disabled>Début du tour</button>
                   							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
                   							             <button type="button" class="btn btn-success btn-sm" disabled>Protection  <span class="badge badge-light badge-pill text-success">2</span></button>
@@ -194,14 +190,35 @@
 														                 <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
                   							             <button type="button" class="btn btn-success btn-sm" disabled>Puissance  <span class="badge badge-light badge-pill text-success">2</span></button>
                                            </div></td>
-                  <td class="align-middle text-center">
-                                          </td>
-										  <td></td>
+                 
+             </tr>
+
+		  </tbody>
+		  </table>
+		  </div>
+
+          <!-- ATTAQUES DE BASE -->
+          <div style="padding-top: 10px;">
+            <div class="row" style="padding-left: 15px;">
+              <h4>Armes</h4>
+            </div>
+            <table class="table table-bordered table-sm">
+              <!-- NOMS COLONNES -->
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" style="width: 15%">Nom</th>
+                  <th scope="col" style="width: 8%">Dégats</th>
+                  <th scope="col" style="width: 51%">Effet de l'attaque</th>
+                  <th scope="col" style="width: 8%">Energy</th>
+                  <th scope="col" style="width: 8%">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+               
 	<!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
-                                                       </td>
-                  <td class="align-middle">Lame d'Acier <!-- NOM -->
+ 
+                  <td class="align-middle">Dague d'acier <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -214,15 +231,13 @@
                   <td class="align-middle"></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>+ </b><b class="pluspower">8</b>  <i class="fas fa-fire"></i>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
                                                        <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
 				<!-- LIGNES -->
                 <tr class="table-actif">
-                  <td class="align-middle text-center"><button type="button" class="btn btn-secondary btn-sm" disabled>Base</button>
-                                                       </td>
-                  <td class="align-middle">Lame d'Argent <!-- NOM -->
+                  <td class="align-middle">Lame d'argent <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -238,7 +253,7 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>+ </b><b class="pluspower">8</b>  <i class="fas fa-fire"></i>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
                                                        <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
@@ -352,7 +367,7 @@
                 <tr class="table-crit table-warning" style="display: none;"> 
                   <td class="text-center"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Denyr Critique <!-- NOM -->
+                  <td class="align-middle">Rituel Denyr <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-danger btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -407,7 +422,7 @@
                 <tr class="table-crit table-warning" style="display: none;"> 
                   <td class="text-center"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Xiia Critique <!-- NOM -->
+                  <td class="align-middle">Rituel Xiia <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
@@ -462,7 +477,7 @@
                 <tr class="table-crit table-warning" style="display: none;"> 
                   <td class="text-center"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
                                           </button></td>
-                  <td class="align-middle">Daar Critique <!-- NOM -->
+                  <td class="align-middle">Rituel Daar <!-- NOM -->
                                           </td>
                   <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="" style="padding-bottom: 5px;">
                                                          <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->

@@ -229,11 +229,11 @@
                                                        </td>
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
                   							             <button type="button" class="btn btn-outline-success btn-sm" disabled>Soi</button>
-                  							             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success">+ 3</span></button>
+                  							             <button type="button" class="btn btn-success btn-sm" disabled>PV  <span class="badge badge-light badge-pill text-success">+3</span></button>
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          </button>
                                           <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
@@ -264,7 +264,7 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          </button>
                                           <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
@@ -409,13 +409,45 @@
                   <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
                   							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
                   							             <button type="button" class="btn btn-danger btn-sm" disabled>Saignement <span class="badge badge-light badge-pill text-danger saign">2</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
-                                         </div>      <button type="button" class="btn btn-outline-dark btn-sm" disabled><i>Vous êtes soigné du double du montant infligé</i></button><div></td>
+                                           
+										 
+										<button type="button" class="btn btn-outline-dark btn-sm" disabled><i>Soigne du montant infligé</i></button></div>
+								<div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-outline-warning btn-sm" disabled>Crit</button>
+                                             <button type="button" class="CritValue btn btn-warning btn-sm text-light" onclick="Crit(this)"><b>33</b></button>
+                                           </div>
+                                           
+										</td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">2</b>  <i class="fab fa-cloudsmith"></i>
                                                        </button></td>                        
                   <td class="text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button> <!-- ATQ BUTTON & UP/DOWN BUTTON -->
                       					          <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
                 </tr>
+				
+								        <!-- LIGNE CRITIQUE -->	
+                <tr class="table-crit table-warning" style="display: none;"> 
+                  <td class="text-center"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
+                                          </button></td>
+                  <td class="align-middle">Succion <!-- NOM -->
+                                          </td>
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>1 EC <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">6</b><b> - </b><b class="dmg-max">10</b> <!-- DMG -->
+                                                         </b></button>
+                                                       </div></td>
+													           
+                  <td colspan="3" class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                  							             <button type="button" class="btn btn-outline-danger btn-sm" disabled>1 EC</button>
+                  							             <button type="button" class="btn btn-danger btn-sm" disabled>Saignement <span class="badge badge-light badge-pill text-danger saign">3</span></button><!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                         </div>      
+										 
+										<button type="button" class="btn btn-outline-dark btn-sm" disabled><i>Soigne du montant infligé</i></button>
+										<!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                           </td>
+                </tr>
+				
                 <!-- LIGNE -->
                 <tr class="table-secondary">
                   <td class="align-middle text-center"><button type="button" class="btn btn-primary btn-sm" disabled>Sort <!-- Technique btn-danger ou Sort btn-primary -->

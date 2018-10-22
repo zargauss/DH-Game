@@ -235,7 +235,8 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
 										  
 	<!-- LIGNES -->
@@ -262,7 +263,9 @@
                                            </div></td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled hidden><b>- </b><b class="moinspower">0</b>
                                                        </button></td>
-  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-crosshairs"></i></button>
+  				        <td class="align-middle text-center"><button type="button" class="Atq btn btn-primary btn-sm" onclick="RollCompAtt(this)"><i class="fas fa-hand-rock"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+                                                       <button type="button" class="Down btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
                                           </td>
 										  
 										  
@@ -360,7 +363,10 @@
                                                          <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">3</b><b> - </b><b class="dmg-max">5</b> <!-- DMG -->
                                                          </b></button>
                                                        </div></td>
-                  <td class="align-middle">
+                  <td class="align-middle"><div class="btn-group btn-group-sm" role="group" aria-label=""> <!-- DESCRIPTION : success -> vert ; danger -> rouge -->
+                                             <button type="button" class="btn btn-outline-warning btn-sm" disabled>Crit</button>
+                                             <button type="button" class="CritValue btn btn-warning btn-sm text-light" onclick="Crit(this)"><b>25</b></button>
+                                           </div>
                                           
                                           </td>
                   <td class="align-middle text-center"><button type="button" class="btn btn-info btn-sm" disabled><b>- </b><b class="moinspower">1</b>  <i class="fab fa-cloudsmith"></i>
@@ -369,6 +375,22 @@
                       					          <button type="button" class="Up btn btn-success btn-sm"><i class="fas fa-angle-double-up"></i></button>
                                           </td>
                 </tr>
+				
+				
+				   <!-- LIGNE  CRIT-->
+           <tr class="table-crit table-warning" style="display: none;"> 
+                  <td class="text-center align-middle"><button type="button" class="btn btn-warning btn-sm text-light" disabled>Critique <!-- Technique btn-danger ou Sort btn-primary -->
+                                          </button></td>
+                  <td class="align-middle">Explosion spectrale <!-- NOM -->
+                                          </td>
+                  <td class="align-middle text-center"><div class="btn-group btn-group-sm" role="group" aria-label="">
+                                                         <button type="button" class="btn btn-outline-primary btn-sm 1" disabled>Zone <!-- Zone / 1 E / Etc ... -->
+                                                         </button> 
+                                                         <button type="button" class="btn btn-primary btn-sm dmg" disabled><b class="dmg-min">6</b><b> - </b><b class="dmg-max">9</b> <!-- DMG -->
+                                                         </b></button>
+                                                       </div>
+													  
+                                                       </td>
                 <!-- LIGNE -->
                 <tr class="table-actif">
                   <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled>Technique <!-- Technique btn-danger ou Sort btn-primary -->
