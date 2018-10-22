@@ -24,3 +24,7 @@ th, td {
   background-repeat: no-repeat;
   border-radius: 0.5rem;
 }
+
+.col-9 {
+  padding-bottom: 70px;
+}

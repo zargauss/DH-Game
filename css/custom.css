@@ -32,3 +32,7 @@ main {
 .jumbotron {
   padding-top: 30px!important;
 }
+
+.col-9 {
+  padding-bottom: 70px!important;
+}
