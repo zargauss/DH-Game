@@ -856,3 +856,12 @@ function plusManaDinaer(){
     $('#PWR').text(parseInt($('#PWR').text()) + mana);
   }
 }
+
+function plusManaDinaer2(){
+  mana = getRandomArbitrary(3, 13);
+  if(parseInt($('#PWR').text()) + mana > parseInt($('#PWR-MAX').text())) {
+    $('#PWR').text($('#PWR-MAX').text());
+  } else {
+    $('#PWR').text(parseInt($('#PWR').text()) + mana);
+  }
+}
