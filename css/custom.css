@@ -25,7 +25,7 @@ html {
 }
 
 main {
-  padding-top: 70px;
+  padding-top: 150px;
   padding-bottom: 30px;
 }
 
@@ -35,4 +35,42 @@ main {
 
 .col-9 {
   padding-bottom: 70px!important;
+} 
+
+#modalRoll .modal-body {
+  padding-bottom: 0px;
 }
+
+.modal-footer {
+  padding: 0px; 
+  border-top: 0px;
+}
+
+#modalRoll .input-group-text {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+#RollMin, #RollMax {
+  border-color: #ffc107;
+}
+
+.modal-footer .btn {
+  border-radius: 0px; 
+  border-bottom-left-radius: .25rem; 
+  border-bottom-right-radius: .25rem;
+}
+
+#modalrandomdebuff .modal-footer, #modalrandombuff .modal-footer {
+  display: none;
+}
+
+#modalrandomdebuff .modal-body, #modalrandombuff .modal-body {
+  padding: 0px;
+}
+
+#modalrandomdebuff .btn, #modalrandombuff .btn{
+  display: block;
+  width: 100%;
+}
+

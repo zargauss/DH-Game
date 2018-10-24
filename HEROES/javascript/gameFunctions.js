@@ -136,15 +136,22 @@ $('.table-actif').each(function(i, obj) {
 })
 
 // GESTION POWER
-if(($(elem.parentNode.parentNode).find('.moinspower')).length == 0) {
+if(($(elem.parentNode.parentNode).find('.pluspower')).length > 0) {
   PWR = parseInt($('#PWR').text());
   PWRPLUS = parseInt($(elem.parentNode.parentNode).find('.pluspower').text());
   $('#PWR').text(PWR + PWRPLUS);
-} else {
+} if(($(elem.parentNode.parentNode).find('.minpower')).length > 0) {
+  PWR = parseInt($('#PWR').text());
+  PWRPLUS = parseInt(getRandomArbitrary(parseInt($(elem.parentNode.parentNode).find('.minpower').text()), parseInt($(elem.parentNode.parentNode).find('.maxpower').text())));
+  console.log($('#PWR').text());
+  $('#PWR').text(PWR + PWRPLUS);
+} if(($(elem.parentNode.parentNode).find('.moinspower')).length > 0) {
   PWR = parseInt($('#PWR').text());
   PWRMOINS = parseInt($(elem.parentNode.parentNode).find('.moinspower').text());
   $('#PWR').text(PWR - PWRMOINS);
 }
+
+
 
 if(parseInt($('#PWR').text()) >= $('#PWR-MAX').text()) {
   $('#PWR').text($('#PWR-MAX').text());
@@ -733,7 +740,7 @@ function Crit(elem){
 ///////////////////////////
 // RANDOM DEBUFF
 function randomDebuff() {
-  var debuff = ["Affaibli", "Brûlure", "Confusion", "Poison", "Faiblesse", "Gel mental", "Lien de vie", "Peur", 
+  var debuff = ["Désarmé", "Brûlure", "Confusion", "Poison", "Faiblesse", "Gel mental", "Lien de vie", "Peur", 
   "Potentialisation", "Ralentissement", "Saignement", "Silence", "Suppression", "Vulnérable", "Provocation"];
 
   $('#randomdebuff').text("");
@@ -745,7 +752,7 @@ function randomDebuff() {
 ///////////////////////////
 // RANDOM BUFF
 function randomBuff() {
-  var buff = ["Chanceux", "Épine", "Esquive", "Furtivité", "Infusion", "Protection", "Puissance", "Réflexion", "Restauration", "Retour", "Sacrifice", "Accélération", "Solide"];
+  var buff = ["Chanceux", "Épine", "Esquive", "Furtivité", "Infusion", "Protection", "Puissance", "Réflexion", "Restauration", "Absorption", "Sacrifice", "Accélération", "Solide"];
 
   $('#randombuff').text("");
   $('#randombuff').text(buff[getRandomArbitrary(0, buff.length - 1)]);
