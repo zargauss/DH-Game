@@ -283,11 +283,8 @@ $(elem.parentNode).find('.btn-B').children().text(tour + 1);
 //////////////////////////
 // LOCK / UNLOCK
 function lock() {
-  $('#CompTab').find('.Up').each(function(i, obj) {
-    $(obj).attr('disabled', true);
-  });
-  $('#CompTab').find('.Down').each(function(i, obj) {
-    $(obj).attr('disabled', true);
+  $("tr.table-secondary").each(function(i, obj) {
+    $(obj).css( "display", "none");
   });
 
   $('.lock').html("");
@@ -297,11 +294,8 @@ function lock() {
 }
 
 function unlock() {
-  $('#CompTab').find('.Up').each(function(i, obj) {
-    $(obj).attr('disabled', false);
-  });
-  $('#CompTab').find('.Down').each(function(i, obj) {
-    $(obj).attr('disabled', false);
+  $("tr.table-secondary").each(function(i, obj) {
+    $(obj).css( "display", "table-row");
   });
 
   $('.lock').html("");
