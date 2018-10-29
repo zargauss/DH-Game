@@ -287,6 +287,10 @@ function lock() {
     $(obj).css( "display", "none");
   });
 
+  $("tr.table-actif").find(".Down").each(function(i, obj) {
+    $(obj).css( "display", "none");
+  });
+
   $('.lock').html("");
   $('.lock').html('<i class="fas fa-lock"></i>');
 
@@ -296,6 +300,10 @@ function lock() {
 function unlock() {
   $("tr.table-secondary").each(function(i, obj) {
     $(obj).css( "display", "table-row");
+  });
+
+  $("tr.table-actif").find(".Down").each(function(i, obj) {
+    $(obj).css( "display", "inline-block");
   });
 
   $('.lock').html("");
