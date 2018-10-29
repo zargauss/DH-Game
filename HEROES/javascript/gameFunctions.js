@@ -874,3 +874,71 @@ function plusManaDinaer2(){
     $('#PWR').text(parseInt($('#PWR').text()) + mana);
   }
 }
+
+//////////////////////////
+// USURPER
+function plusManaUSURPER(){
+  mana = getRandomArbitrary(3, 12);
+  if(parseInt($('#PWR').text()) + mana > parseInt($('#PWR-MAX').text())) {
+    $('#PWR').text($('#PWR-MAX').text());
+  } else {
+    $('#PWR').text(parseInt($('#PWR').text()) + mana);
+  }
+}
+
+function plusManaUSURPER2(){
+  mana = getRandomArbitrary(5, 15);
+  if(parseInt($('#PWR').text()) + mana > parseInt($('#PWR-MAX').text())) {
+    $('#PWR').text($('#PWR-MAX').text());
+  } else {
+    $('#PWR').text(parseInt($('#PWR').text()) + mana);
+  }
+}
+
+//////////////////////////
+// PANTHERA
+function Armure2Panthera(truc){
+  if($(truc.parentNode.parentNode).attr('class') == "table-secondary") {
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+      min = parseInt($(obj).text());
+      console.log(min)
+      $(obj).text(min + 1);
+    });
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+        min = parseInt($(obj).text());
+        console.log(min)
+        $(obj).text(min + 1);
+      });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-min').each(function(i, obj) {
+        min = parseInt($(obj).text());
+        console.log(min)
+        $(obj).text(min + 1);
+      });
+    $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+        min = parseInt($(obj).text());
+        console.log(min)
+        $(obj).text(min + 1);
+      });
+  } else {
+    $('.btn.btn-danger.btn-sm.dmg').find('.dmg-min').each(function(i, obj) {
+        min = parseInt($(obj).text());
+        console.log(min)
+        $(obj).text(min - 1);
+      });
+      $('.btn.btn-danger.btn-sm.dmg').find('.dmg-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+      $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-min').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+      $('.btn.btn-danger.btn-sm.dmg-crit').find('.dmg-crit-max').each(function(i, obj) {
+          min = parseInt($(obj).text());
+          console.log(min)
+          $(obj).text(min - 1);
+        });
+  }
+}
