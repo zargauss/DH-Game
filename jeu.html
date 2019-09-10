@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/dice.png">
+
+    <title>Règles</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body class="bg">
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">ZarOx</a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-success" href="index.html">Règles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-info border-bottom border-info" href="jeu.html">Jeu</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTAINER -->
+    <main role="main" class="container">
+	  
+	    <div class="row">
+        <div class="col-8">
+
+          <div class="row">
+
+            <div class="col">
+              <div class="card mb-4 shadow-sm border-dark text-center">
+              <div class="card-header bg-dark">
+                <h4 class="my-0 font-weight-normal text-light">Héros</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col col-md">
+                    <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
+                  </div>
+                  <h1 class="valeur"> 30 </h1>
+                  <div class="col col-md">
+                    <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col">
+              <div class="card mb-4 shadow-sm border-dark text-center">
+              <div class="card-header bg-dark">
+                <h4 class="my-0 font-weight-normal text-light">Serviteur 1</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col col-md">
+                    <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
+                  </div>
+                  <h1 class="valeur">30</h1>
+                  <div class="col col-md">
+                    <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-4 shadow-sm border-dark text-center">
+              <div class="card-header bg-dark">
+                <h4 class="my-0 font-weight-normal text-light">Serviteur 2</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col col-md">
+                    <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
+                  </div>
+                  <h1 class="valeur">30</h1>
+                  <div class="col col-md">
+                    <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-4">
+          
+          <div class="card mb-4 shadow-sm border-dark text-center">
+            <div class="card-header bg-dark">
+              <h4 class="my-0 font-weight-normal text-light">Minimum</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col col-md">
+                  <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
+                </div>
+                <h1 id="min" class="valeur">2</h1>
+                <div class="col col-md">
+                  <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 shadow-sm border-dark text-center">
+            <div class="card-body">
+              <h1 class="valeur">4</h1>
+              <div class="col col-md">
+                  <button type="button" class="btn btn-outline-dark Random"><i class="fas fa-random"></i></button>
+                </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 shadow-sm border-dark text-center">
+            <div class="card-header bg-dark">
+              <h4 class="my-0 font-weight-normal text-light">Maximum</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col col-md">
+                  <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
+                </div>
+                <h1 id="max" class="valeur">7</h1>
+                <div class="col col-md">
+                  <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="container-fluid bg-light">
+      <div class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <i class="fas fa-dice"></i> ZarOx
+          <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Règles</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <p><a href="#">Retour en haut</a></p>
+        </div>
+      </div>
+      </div>
+    </footer>
+ 
+  </body>
+</html>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+/*
+ * Copyright (C) - 2019 DHGame
+ *
+ */
+
+//////////////////////
+// Random Function
+function getRandomArbitrary(min, max){
+return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//////////////////////
+// Minus Function
+function minus(elem){
+  // Récupération valeur
+  val = parseInt($(elem.parentNode.parentNode).find('.valeur').text());
+  // Minus
+  val = val - 1;
+  // Réécriture
+  $(elem.parentNode.parentNode).find('.valeur').text(val);
+}
+
+//////////////////////
+// Plus Function
+function plus(elem){
+  // Récupération valeur
+  val = parseInt($(elem.parentNode.parentNode).find('.valeur').text());
+  // Minus
+  val = val + 1;
+  // Réécriture
+  $(elem.parentNode.parentNode).find('.valeur').text(val);
+}
+
+//////////////////////
+// Plus Function
+function random(elem){
+  // Val random
+  val = getRandomArbitrary(parseInt($("#min").text()), parseInt($("#max").text()));
+  // Sleep / Réécriture
+    $(elem.parentNode.parentNode).find('.valeur').text(val + " !");
+  // Réécritre
+  setTimeout(function(){
+    $(elem.parentNode.parentNode).find('.valeur').text(val);
+  }, 1000);
+}
+
+//////////////////////////
+// Set Click Buttons
+
+$('.Minus').click(function () {
+   minus(this);
+});
+$('.Plus').click(function () {
+   plus(this);
+});
+$('.Random').click(function () {
+   random(this);
+});
+
+</script>
