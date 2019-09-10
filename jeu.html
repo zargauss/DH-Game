@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link text-success" href="index.html">Règles</a>
+              <a class="nav-link text-success" href="index.html">Regles</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-info border-bottom border-info" href="jeu.html">Jeu</a>
@@ -50,14 +50,14 @@
             <div class="col">
               <div class="card mb-4 shadow-sm border-dark text-center">
               <div class="card-header bg-dark">
-                <h4 class="my-0 font-weight-normal text-light">Héros</h4>
+                <h4 class="my-0 font-weight-normal text-light">Heros</h4>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col col-md">
                     <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
                   </div>
-                  <h1 class="valeur"> 30 </h1>
+                  <h1 id="heros" class="valeur"> 30 </h1>
                   <div class="col col-md">
                     <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
                   </div>
@@ -80,7 +80,7 @@
                   <div class="col col-md">
                     <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
                   </div>
-                  <h1 class="valeur">30</h1>
+                  <h1 id="sev1" class="valeur">30</h1>
                   <div class="col col-md">
                     <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
                   </div>
@@ -99,7 +99,7 @@
                   <div class="col col-md">
                     <button type="button" class="btn btn-outline-dark Minus"><i class="fas fa-minus"></i></button>
                   </div>
-                  <h1 class="valeur">30</h1>
+                  <h1 id="sev2" class="valeur">30</h1>
                   <div class="col col-md">
                     <button type="button" class="btn btn-outline-dark Plus"><i class="fas fa-plus"></i></button>
                   </div>
@@ -167,11 +167,11 @@
       <div class="container py-5">
       <div class="row">
         <div class="col-12 col-md">
-          <i class="fas fa-dice"></i> ZarOx
-          <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+          ZarOx
+          <small class="d-block mb-3 text-muted">&copy; 2017-2019</small>
         </div>
         <div class="col-6 col-md">
-          <h5>Règles</h5>
+          <h5>Regles</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="#">Cool stuff</a></li>
             <li><a class="text-muted" href="#">Random feature</a></li>
@@ -225,6 +225,18 @@
  */
 
 //////////////////////
+// Chargement
+if(localStorage.getItem('heros') != null){
+  $("#heros").text(localStorage.getItem('heros'));
+}
+if(localStorage.getItem('sev1') != null){
+  $("#sev1").text(localStorage.getItem('sev1'));
+}
+if(localStorage.getItem('sev2') != null){
+  $("#sev2").text(localStorage.getItem('sev2'));
+}
+
+//////////////////////
 // Random Function
 function getRandomArbitrary(min, max){
 return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -239,6 +251,11 @@ function minus(elem){
   val = val - 1;
   // Réécriture
   $(elem.parentNode.parentNode).find('.valeur').text(val);
+
+  // Save
+  localStorage.setItem('heros', $("#heros").text());
+  localStorage.setItem('sev1', $("#sev1").text());
+  localStorage.setItem('sev2', $("#sev2").text());
 }
 
 //////////////////////
@@ -250,6 +267,11 @@ function plus(elem){
   val = val + 1;
   // Réécriture
   $(elem.parentNode.parentNode).find('.valeur').text(val);
+
+  // Save
+  localStorage.setItem('heros', $("#heros").text());
+  localStorage.setItem('sev1', $("#sev1").text());
+  localStorage.setItem('sev2', $("#sev2").text());  
 }
 
 //////////////////////
